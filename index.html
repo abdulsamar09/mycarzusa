@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Weekly & Monthly Car Rentals in the US. No credit check required, fast approval, insurance available, and unlimited mileage. Experience luxury rentals with MYCARZ RENTALS.">
+    <meta name="keywords" content="luxury car rental, monthly car rental, weekly car rental, no credit check car rental, US car rentals, MYCARZ RENTALS">
+    <title>MYCARZ RENTALS | Premium Weekly & Monthly Car Rentals</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=3.6">
+</head>
+<body>
+
+    <!-- LUXURY PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <img src="assets/Logo Black.png" alt="MYCARZ RENTALS" class="preloader-logo-img">
+            </div>
+            <div class="loader-track">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY HEADER -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="assets/Logo White.png" alt="MYCARZ RENTALS" class="logo-white-img logo-img">
+                <img src="assets/Logo Black.png" alt="MYCARZ RENTALS" class="logo-black-img logo-img">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#cars" class="nav-link">Our Cars</a>
+                <a href="#packages" class="nav-link">Rental Packages</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#documents" class="nav-link">Requirements</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:+18005550199" class="phone-btn">
+                    <i data-lucide="phone" class="icon-small"></i>
+                    <span>(800) 555-0199</span>
+                </a>
+                <a href="#apply" class="btn btn-gold sheen-effect">
+                    <span>Apply Now <i data-lucide="calendar" class="icon-right"></i></span>
+                </a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#cars" class="mobile-link">Our Cars</a>
+            <a href="#packages" class="mobile-link">Rental Packages</a>
+            <a href="#how-it-works" class="mobile-link">How It Works</a>
+            <a href="#documents" class="mobile-link">Requirements</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <a href="tel:+18005550199" class="mobile-phone-btn">
+                <i data-lucide="phone"></i> Call (800) 555-0199
+            </a>
+            <a href="#apply" class="btn btn-gold sheen-effect">
+                <span>Apply Now <i data-lucide="calendar" class="icon-right"></i></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- CINEMATIC HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="hero-bg">
+                <video autoplay loop muted playsinline class="hero-video-bg">
+                    <source src="assets/Black_Hyundai_driving_city_sunset.mp4" type="video/mp4">
+                </video>
+                <div class="dark-overlay"></div>
+                <div class="ambient-glow"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-tag scroll-reveal">LUXURY MOBILITY DEFINED</span>
+                    <h1 class="hero-title scroll-reveal">
+                        DRIVE TODAY.<br>
+                        <span class="gold-gradient-text">NO CREDIT? NO PROBLEM.</span>
+                    </h1>
+                    <p class="hero-subtitle scroll-reveal">
+                        Affordable weekly &amp; monthly rentals with fast approval.
+                    </p>
+
+                    <div class="hero-bullets scroll-reveal">
+                        <div class="bullet-item">
+                            <span class="bullet-icon"><i data-lucide="check"></i></span>
+                            <span class="bullet-text">Fast Approval</span>
+                        </div>
+                        <div class="bullet-item">
+                            <span class="bullet-icon"><i data-lucide="check"></i></span>
+                            <span class="bullet-text">Insurance Included</span>
+                        </div>
+                        <div class="bullet-item">
+                            <span class="bullet-icon"><i data-lucide="check"></i></span>
+                            <span class="bullet-text">Unlimited Mileage</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions scroll-reveal">
+                        <a href="#cars" class="btn btn-gold sheen-effect">
+                            <span>View Cars <i data-lucide="car" class="icon-right"></i></span>
+                        </a>
+                        <a href="#apply" class="btn btn-outline">
+                            <span>Apply Now <i data-lucide="arrow-right" class="icon-right"></i></span>
+                        </a>
+                    </div><!-- end hero-actions -->
+                </div><!-- end hero-content -->
+
+                <!-- Floating Glassmorphic Badges Sidebar -->
+                <div class="hero-badges-sidebar">
+                    <div class="floating-badge badge-price scroll-reveal">
+                        <div class="badge-glow"></div>
+                        <span class="badge-label">Starting From</span>
+                        <span class="badge-val">$25<small>/Day</small></span>
+                    </div>
+
+                    <div class="floating-badge badge-insurance scroll-reveal">
+                        <i data-lucide="shield-check"></i>
+                        <span>Insurance Included</span>
+                    </div>
+
+                    <div class="floating-badge badge-terms scroll-reveal">
+                        <i data-lucide="calendar"></i>
+                        <span>Weekly &amp; Monthly Rentals</span>
+                    </div>
+                </div><!-- end hero-badges-sidebar -->
+            </div><!-- end hero-container -->
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="why-us-section" id="why-us">
+            <div class="container">
+                <div class="section-header scroll-reveal" style="text-align: center;">
+                    <span class="section-tag">UNMATCHED SERVICE</span>
+                    <h2 class="section-title">THE MYCARZ DIFFERENCE</h2>
+                    <p class="section-subtitle">We merge premium vehicles with a seamless rental policy, bypassing standard franchise red tape.</p>
+                </div>
+
+                <div class="why-us-grid scroll-reveal">
+                    
+                    <!-- Left Column -->
+                    <div class="why-us-col why-us-col-left">
+                        <div class="why-feature-item">
+                            <div class="why-feature-header">
+                                <div class="why-feature-icon">
+                                    <i data-lucide="dollar-sign"></i>
+                                </div>
+                                <h3 class="why-feature-title">Affordable Rates</h3>
+                            </div>
+                            <p class="why-feature-desc">Deep discounts for monthly and multi-month lease terms with transparent pricing.</p>
+                        </div>
+                        <div class="why-feature-item">
+                            <div class="why-feature-header">
+                                <div class="why-feature-icon">
+                                    <i data-lucide="shield-check"></i>
+                                </div>
+                                <h3 class="why-feature-title">Insurance Options</h3>
+                            </div>
+                            <p class="why-feature-desc">Transfer your existing personal auto policy or purchase our custom collision cover.</p>
+                        </div>
+                    </div>
+
+                    <!-- Center Column (3D Popout Image) -->
+                    <div class="why-us-col why-us-col-center">
+                        <div class="why-3d-wrapper">
+                            <div class="why-oval-bg">
+                                <img src="assets/pexels-photo-36930937.png" alt="Karachi Cityscape Skyline" class="why-oval-img">
+                            </div>
+                            <div class="why-car-overlay">
+                                <img src="assets/pngwing.com (2).png" alt="Featured Hyundai Vehicle" class="why-car-img-overlay">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="why-us-col why-us-col-right">
+                        <div class="why-feature-item">
+                            <div class="why-feature-header">
+                                <div class="why-feature-icon">
+                                    <i data-lucide="compass"></i>
+                                </div>
+                                <h3 class="why-feature-title">Unlimited Mileage</h3>
+                            </div>
+                            <p class="why-feature-desc">Go wherever you need without restrictions. Zero limits within the rental region.</p>
+                        </div>
+                        <div class="why-feature-item">
+                            <div class="why-feature-header">
+                                <div class="why-feature-icon">
+                                    <i data-lucide="clipboard-check"></i>
+                                </div>
+                                <h3 class="why-feature-title">Quick Approval</h3>
+                            </div>
+                            <p class="why-feature-desc">Fast 100% digital screening. Upload your documents online and pick up your vehicle.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- RENTAL PACKAGES SECTION -->
+        <section class="packages-section" id="packages">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">FLEXIBLE PACKAGES</span>
+                    <h2 class="section-title">CHOOSE YOUR RENTAL PLAN</h2>
+                    <p class="section-subtitle">Select between our certified Used fleet and brand-new models. Scale your plan for maximum savings.</p>
+                </div>
+
+                <div class="packages-grid">
+                    <!-- USED CARS PACKAGE -->
+                    <div class="package-card glass-panel scroll-reveal" data-tier="used">
+                        <div class="package-header">
+                            <div class="package-title-box">
+                                <h3 class="package-name">USED FLEET</h3>
+                                <span class="badge-deposit">$100 Security Deposit</span>
+                            </div>
+                            <div class="package-price-row">
+                                <span class="price-val">$400</span>
+                                <span class="price-unit">/week (Weekly Plan)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-rates">
+                            <div class="rate-item active" data-weeks="4">
+                                <div class="rate-label-box">
+                                    <span class="rate-duration">Monthly Plan</span>
+                                    <span class="rate-note">Best Value</span>
+                                </div>
+                                <div class="rate-price-box">
+                                    <span class="rate-w-price">$350<small>/week</small></span>
+                                    <span class="rate-t-price">($1,400 Total)</span>
+                                </div>
+                            </div>
+                            <div class="rate-item" data-weeks="8">
+                                <div class="rate-label-box">
+                                    <span class="rate-duration">2 Months Plan</span>
+                                </div>
+                                <div class="rate-price-box">
+                                    <span class="rate-w-price">$325<small>/week</small></span>
+                                    <span class="rate-t-price">($2,600 Total)</span>
+                                </div>
+                            </div>
+                            <div class="rate-item" data-weeks="12">
+                                <div class="rate-label-box">
+                                    <span class="rate-duration">3 Months Plan</span>
+                                </div>
+                                <div class="rate-price-box">
+                                    <span class="rate-w-price">$300<small>/week</small></span>
+                                    <span class="rate-t-price">($3,600 Total)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="package-features">
+                            <li><i data-lucide="check"></i> <span>Insurance Included</span></li>
+                            <li><i data-lucide="check"></i> <span>Unlimited Mileage</span></li>
+                            <li><i data-lucide="check"></i> <span>Full Maintenance Cover</span></li>
+                            <li><i data-lucide="check"></i> <span>24/7 Roadside Assistance</span></li>
+                            <li><i data-lucide="info"></i> <span class="italic text-muted">No Security Deposit for Credit Card Holders</span></li>
+                        </ul>
+
+                        <div class="package-footer">
+                            <button onclick="selectRentalPlan('used', 'monthly')" class="btn btn-gold sheen-effect w-full">
+                                <span>Apply For Used Rental <i data-lucide="arrow-right" class="icon-right"></i></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- NEW CARS PACKAGE -->
+                    <div class="package-card glass-panel scroll-reveal featured" data-tier="new">
+                        <div class="package-tag">PREMIUM EXPERIENCE</div>
+                        <div class="package-header">
+                            <div class="package-title-box">
+                                <h3 class="package-name">NEW FLEET</h3>
+                                <span class="badge-deposit">$200 Security Deposit</span>
+                            </div>
+                            <div class="package-price-row">
+                                <span class="price-val">$450</span>
+                                <span class="price-unit">/week (Weekly Plan)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-rates">
+                            <div class="rate-item active" data-weeks="4">
+                                <div class="rate-label-box">
+                                    <span class="rate-duration">Monthly Plan</span>
+                                    <span class="rate-note">Highly Recommended</span>
+                                </div>
+                                <div class="rate-price-box">
+                                    <span class="rate-w-price">$400<small>/week</small></span>
+                                    <span class="rate-t-price">($1,600 Total)</span>
+                                </div>
+                            </div>
+                            <div class="rate-item" data-weeks="8">
+                                <div class="rate-label-box">
+                                    <span class="rate-duration">2 Months Plan</span>
+                                </div>
+                                <div class="rate-price-box">
+                                    <span class="rate-w-price">$375<small>/week</small></span>
+                                    <span class="rate-t-price">($3,000 Total)</span>
+                                </div>
+                            </div>
+                            <div class="rate-item" data-weeks="12">
+                                <div class="rate-label-box">
+                                    <span class="rate-duration">3 Months Plan</span>
+                                </div>
+                                <div class="rate-price-box">
+                                    <span class="rate-w-price">$350<small>/week</small></span>
+                                    <span class="rate-t-price">($4,200 Total)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="package-features">
+                            <li><i data-lucide="check"></i> <span>Insurance Included</span></li>
+                            <li><i data-lucide="check"></i> <span>Unlimited Mileage</span></li>
+                            <li><i data-lucide="check"></i> <span>Full Maintenance Cover</span></li>
+                            <li><i data-lucide="check"></i> <span>24/7 Roadside Assistance</span></li>
+                            <li><i data-lucide="info"></i> <span class="italic text-muted">No Security Deposit for Credit Card Holders</span></li>
+                        </ul>
+
+                        <div class="package-footer">
+                            <button onclick="selectRentalPlan('new', 'monthly')" class="btn btn-gold sheen-effect w-full">
+                                <span>Apply For New Rental <i data-lucide="arrow-right" class="icon-right"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED FLEET (CAR GRID) -->
+        <section class="cars-section" id="cars">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">ELITE FLEET</span>
+                    <h2 class="section-title">CHOOSE YOUR VEHICLE</h2>
+                    <p class="section-subtitle">Explore our highly maintained, premium automotive catalog. Tap on any vehicle to view specifications.</p>
+                </div>
+
+                <!-- CARS CAROUSEL -->
+                <div class="cars-carousel-wrapper">
+
+                    <!-- Prev Arrow -->
+                    <button class="carousel-arrow carousel-prev" id="carsPrev" aria-label="Previous">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+
+                    <!-- Clipping container (overflow:hidden clips the sliding track) -->
+                    <div class="cars-track-outer">
+                        <div class="cars-track" id="carsTrack">
+
+                        <!-- CAR 1 -->
+                        <div class="car-card glass-panel" data-car="2016 Hyundai Elantra">
+                            <div class="car-image-container">
+                                <img src="assets/elantra_2016.png" alt="2016 Hyundai Elantra" class="car-img">
+                                <span class="car-year">2016</span>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-name">Hyundai Elantra</h3>
+                                <div class="car-meta">
+                                    <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                    <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                </div>
+                                <div class="car-footer">
+                                    <div class="car-price-box">
+                                        <span class="price-lbl">Starting from</span>
+                                        <span class="price-val">$25<small>/Day</small></span>
+                                    </div>
+                                    <button onclick="selectVehicle('2016 Hyundai Elantra')" class="btn btn-gold-outline btn-small sheen-effect">
+                                        <span><i data-lucide="car" class="icon-left"></i> Select</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CAR 2 -->
+                        <div class="car-card glass-panel" data-car="2016 Hyundai Sonata">
+                            <div class="car-image-container">
+                                <img src="assets/sonata_2016.png" alt="2016 Hyundai Sonata" class="car-img">
+                                <span class="car-year">2016</span>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-name">Hyundai Sonata</h3>
+                                <div class="car-meta">
+                                    <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                    <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                </div>
+                                <div class="car-footer">
+                                    <div class="car-price-box">
+                                        <span class="price-lbl">Starting from</span>
+                                        <span class="price-val">$25<small>/Day</small></span>
+                                    </div>
+                                    <button onclick="selectVehicle('2016 Hyundai Sonata')" class="btn btn-gold-outline btn-small sheen-effect">
+                                        <span><i data-lucide="car" class="icon-left"></i> Select</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CAR 3 -->
+                        <div class="car-card glass-panel" data-car="2025 Hyundai Tucson">
+                            <div class="car-image-container">
+                                <img src="assets/tucson_2025.png" alt="2025 Hyundai Tucson" class="car-img">
+                                <span class="car-year">2025</span>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-name">Hyundai Tucson</h3>
+                                <div class="car-meta">
+                                    <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                    <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                </div>
+                                <div class="car-footer">
+                                    <div class="car-price-box">
+                                        <span class="price-lbl">Starting from</span>
+                                        <span class="price-val">$25<small>/Day</small></span>
+                                    </div>
+                                    <button onclick="selectVehicle('2025 Hyundai Tucson')" class="btn btn-gold-outline btn-small sheen-effect">
+                                        <span><i data-lucide="car" class="icon-left"></i> Select</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CAR 4 -->
+                        <div class="car-card glass-panel" data-car="2017 Hyundai Elantra">
+                            <div class="car-image-container">
+                                <img src="assets/elantra_2017.png" alt="2017 Hyundai Elantra" class="car-img">
+                                <span class="car-year">2017</span>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-name">Hyundai Elantra</h3>
+                                <div class="car-meta">
+                                    <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                    <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                </div>
+                                <div class="car-footer">
+                                    <div class="car-price-box">
+                                        <span class="price-lbl">Starting from</span>
+                                        <span class="price-val">$25<small>/Day</small></span>
+                                    </div>
+                                    <button onclick="selectVehicle('2017 Hyundai Elantra')" class="btn btn-gold-outline btn-small sheen-effect">
+                                        <span><i data-lucide="car" class="icon-left"></i> Select</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CAR 5 -->
+                        <div class="car-card glass-panel" data-car="2015 Kia Sorento">
+                            <div class="car-image-container">
+                                <img src="assets/sorento_2015.png" alt="2015 Kia Sorento" class="car-img">
+                                <span class="car-year">2015</span>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-name">Kia Sorento</h3>
+                                <div class="car-meta">
+                                    <div class="meta-item"><i data-lucide="users"></i> <span>7 Seats</span></div>
+                                    <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                </div>
+                                <div class="car-footer">
+                                    <div class="car-price-box">
+                                        <span class="price-lbl">Starting from</span>
+                                        <span class="price-val">$25<small>/Day</small></span>
+                                    </div>
+                                    <button onclick="selectVehicle('2015 Kia Sorento')" class="btn btn-gold-outline btn-small sheen-effect">
+                                        <span><i data-lucide="car" class="icon-left"></i> Select</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CAR 6 -->
+                        <div class="car-card glass-panel" data-car="2016 Hyundai Santa Fe">
+                            <div class="car-image-container">
+                                <img src="assets/santa_fe_2016.png" alt="2016 Hyundai Santa Fe" class="car-img">
+                                <span class="car-year">2016</span>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-name">Hyundai Santa Fe</h3>
+                                <div class="car-meta">
+                                    <div class="meta-item"><i data-lucide="users"></i> <span>7 Seats</span></div>
+                                    <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                </div>
+                                <div class="car-footer">
+                                    <div class="car-price-box">
+                                        <span class="price-lbl">Starting from</span>
+                                        <span class="price-val">$25<small>/Day</small></span>
+                                    </div>
+                                    <button onclick="selectVehicle('2016 Hyundai Santa Fe')" class="btn btn-gold-outline btn-small sheen-effect">
+                                        <span><i data-lucide="car" class="icon-left"></i> Select</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                            </div><!-- end cars-track -->
+                        </div><!-- end cars-track-outer -->
+
+                    <!-- Next Arrow -->
+                    <button class="carousel-arrow carousel-next" id="carsNext" aria-label="Next">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+
+                </div><!-- end cars-carousel-wrapper -->
+
+                <!-- Dot Indicators -->
+                <div class="carousel-dots" id="carsDots"></div>
+
+            </div>
+        </section>
+
+
+        <!-- HOW IT WORKS SECTION -->
+        <section class="how-section" id="how-it-works">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">STREAMLINED STEP-BY-STEP</span>
+                    <h2 class="section-title">HOW IT WORKS</h2>
+                    <p class="section-subtitle">Get behind the wheel in four straightforward digital stages.</p>
+                </div>
+
+                <div class="timeline-container scroll-reveal">
+                    <div class="timeline-progress"></div>
+                    <div class="timeline-step" data-step="1">
+                        <div class="step-num-box">
+                            <span class="step-num">01</span>
+                            <div class="step-glow"></div>
+                        </div>
+                        <h3 class="step-title">Choose Vehicle</h3>
+                        <p class="step-desc">Pick your model from our luxury used or new fleet selection online.</p>
+                    </div>
+                    <div class="timeline-step" data-step="2">
+                        <div class="step-num-box">
+                            <span class="step-num">02</span>
+                            <div class="step-glow"></div>
+                        </div>
+                        <h3 class="step-title">Upload Documents</h3>
+                        <p class="step-desc">Provide your license, address proof, and insurance credentials.</p>
+                    </div>
+                    <div class="timeline-step" data-step="3">
+                        <div class="step-num-box">
+                            <span class="step-num">03</span>
+                            <div class="step-glow"></div>
+                        </div>
+                        <h3 class="step-title">Review Agreement</h3>
+                        <p class="step-desc">Initial and digitally sign the standardized rental contract terms.</p>
+                    </div>
+                    <div class="timeline-step" data-step="4">
+                        <div class="step-num-box">
+                            <span class="step-num">04</span>
+                            <div class="step-glow"></div>
+                        </div>
+                        <h3 class="step-title">Pick Up Vehicle</h3>
+                        <p class="step-desc">Arrive at our hub, collect your remote key FOB, and take off.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REQUIRED DOCUMENTS SECTION -->
+        <section class="documents-section" id="documents">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">VERIFICATION REQUIREMENTS</span>
+                    <h2 class="section-title">REQUIRED DOCUMENTS</h2>
+                    <p class="section-subtitle">Please ensure you have these ready for upload before filling out the online application.</p>
+                </div>
+
+                <div class="docs-grid scroll-reveal">
+                    <div class="doc-card glass-panel">
+                        <div class="doc-icon"><i data-lucide="contact"></i></div>
+                        <h3 class="doc-title">Driver License</h3>
+                        <p class="doc-desc">Valid US driver license. Must not be expired or suspended.</p>
+                    </div>
+                    <div class="doc-card glass-panel">
+                        <div class="doc-icon"><i data-lucide="home"></i></div>
+                        <h3 class="doc-title">Proof of Address</h3>
+                        <p class="doc-desc">Two current documents (e.g. utility bill, bank statements) showing address.</p>
+                    </div>
+                    <div class="doc-card glass-panel">
+                        <div class="doc-icon"><i data-lucide="credit-card"></i></div>
+                        <h3 class="doc-title">Insurance Card</h3>
+                        <p class="doc-desc">Proof of current auto insurance or transfer verification policy details.</p>
+                    </div>
+                    <div class="doc-card glass-panel">
+                        <div class="doc-icon"><i data-lucide="smartphone"></i></div>
+                        <h3 class="doc-title">Phone & Email</h3>
+                        <p class="doc-desc">Verified contact numbers and active primary emails for agreements.</p>
+                    </div>
+                    <div class="doc-card glass-panel optional">
+                        <div class="doc-icon"><i data-lucide="camera"></i></div>
+                        <h3 class="doc-title">Selfie with License</h3>
+                        <p class="doc-desc"><span class="badge-optional">Optional</span> For instant validation and remote kiosk pickups.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ONLINE RENTAL APPLICATION FORM -->
+        <section class="application-section" id="apply">
+            <div class="container">
+                <div class="form-wrapper glass-panel scroll-reveal">
+                    <div class="form-intro">
+                        <h2 class="form-headline">APPLY ONLINE</h2>
+                        <p class="form-subheadline">Instant screening submission. Complete the checkout form below.</p>
+                    </div>
+
+                    <form id="rentalApplicationForm" class="wizard-form" onsubmit="handleFormSubmit(event)">
+                        
+                        <!-- Form Navigation Steps -->
+                        <div class="form-steps-nav">
+                            <div class="step-nav-btn active" data-target-step="1">
+                                <span class="step-nav-num">1</span>
+                                <span class="step-nav-text">Personal Info</span>
+                            </div>
+                            <div class="step-nav-btn" data-target-step="2">
+                                <span class="step-nav-num">2</span>
+                                <span class="step-nav-text">Rental Details</span>
+                            </div>
+                            <div class="step-nav-btn" data-target-step="3">
+                                <span class="step-nav-num">3</span>
+                                <span class="step-nav-text">Uploads</span>
+                            </div>
+                        </div>
+
+                        <!-- STEP 1: PERSONAL INFORMATION -->
+                        <div class="form-step-content active" data-step="1">
+                            <h3 class="step-heading">Personal Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group col-half">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required placeholder="John">
+                                </div>
+                                <div class="form-group col-half">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="(555) 000-0000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="address">Street Address *</label>
+                                    <input type="text" id="address" name="address" required placeholder="123 Luxury Dr">
+                                </div>
+                                <div class="form-group col-third">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required placeholder="Los Angeles">
+                                </div>
+                                <div class="form-group col-third">
+                                    <label for="state">State *</label>
+                                    <input type="text" id="state" name="state" required placeholder="CA">
+                                </div>
+                                <div class="form-group col-third">
+                                    <label for="zipCode">ZIP Code *</label>
+                                    <input type="text" id="zipCode" name="zipCode" required placeholder="90001">
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions-row">
+                                <div></div>
+                                <button type="button" onclick="navigateStep(2)" class="btn btn-gold sheen-effect">
+                                    <span>Next Step <i data-lucide="arrow-right" class="icon-right"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2: RENTAL DETAILS -->
+                        <div class="form-step-content" data-step="2">
+                            <h3 class="step-heading">Rental Configuration</h3>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="vehicleDropdown">Vehicle Select *</label>
+                                    <select id="vehicleDropdown" name="vehicle" required onchange="updateDynamicRates()">
+                                        <option value="" disabled selected>-- Select Vehicle --</option>
+                                        <option value="2016 Hyundai Elantra">2016 Hyundai Elantra</option>
+                                        <option value="2016 Hyundai Sonata">2016 Hyundai Sonata</option>
+                                        <option value="2025 Hyundai Tucson">2025 Hyundai Tucson</option>
+                                        <option value="2017 Hyundai Elantra">2017 Hyundai Elantra</option>
+                                        <option value="2015 Kia Sorento">2015 Kia Sorento</option>
+                                        <option value="2016 Hyundai Santa Fe">2016 Hyundai Santa Fe</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="rentalDuration">Rental Plan Term *</label>
+                                    <select id="rentalDuration" name="duration" required onchange="updateDynamicRates()">
+                                        <option value="Weekly">Weekly Plan</option>
+                                        <option value="Monthly" selected>Monthly Plan</option>
+                                        <option value="2 Months">2 Months Plan</option>
+                                        <option value="3 Months">3 Months Plan</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label>Insurance Coverage Options *</label>
+                                    <div class="radio-group-vertical">
+                                        <label class="radio-label">
+                                            <input type="radio" name="insuranceOption" value="Own Insurance" required checked>
+                                            <span class="custom-radio"></span>
+                                            <div>
+                                                <strong>I Have My Own Insurance</strong>
+                                                <p class="radio-sub">Provide proof of auto liability policy matching requirements.</p>
+                                            </div>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="insuranceOption" value="Purchase RCP">
+                                            <span class="custom-radio"></span>
+                                            <div>
+                                                <strong>Purchase Rental Collision Protection (RCP)</strong>
+                                                <p class="radio-sub">Adds $20/day coverage for collision up to $20,000 ($250 deductible).</p>
+                                            </div>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="insuranceOption" value="Need Policy Creation">
+                                            <span class="custom-radio"></span>
+                                            <div>
+                                                <strong>Request Customized Insurance Policy Setup</strong>
+                                                <p class="radio-sub">We will coordinate with standard providers to formulate a policy cover.</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Price Configurator Preview Card -->
+                            <div class="live-calc-card glass-panel-inner">
+                                <h4 class="calc-title"><i data-lucide="calculator"></i> Estimated Plan Summary</h4>
+                                <div class="calc-detail-row">
+                                    <span>Plan Selected:</span>
+                                    <span id="calcPlan">-</span>
+                                </div>
+                                <div class="calc-detail-row">
+                                    <span>Rate/week:</span>
+                                    <span id="calcWeekly" class="gold-text">-</span>
+                                </div>
+                                <div class="calc-detail-row">
+                                    <span>Refundable Security Deposit:</span>
+                                    <span id="calcDeposit">-</span>
+                                </div>
+                                <div class="calc-detail-row total-row">
+                                    <span>Initial Estimated Total:</span>
+                                    <span id="calcTotal">-</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions-row">
+                                <button type="button" onclick="navigateStep(1)" class="btn btn-outline">
+                                    <span><i data-lucide="arrow-left" class="icon-left"></i> Back</span>
+                                </button>
+                                <button type="button" onclick="navigateStep(3)" class="btn btn-gold sheen-effect">
+                                    <span>Next Step <i data-lucide="arrow-right" class="icon-right"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3: DOCUMENT UPLOAD & AGREEMENT -->
+                        <div class="form-step-content" data-step="3">
+                            <h3 class="step-heading">Required Documents Upload</h3>
+                            <p class="step-intro-txt">Drag and drop files or click to upload. Image formats (PNG, JPG, PDF) allowed up to 10MB.</p>
+                            
+                            <div class="upload-slots-grid">
+                                <!-- Driver License Slot -->
+                                <div class="upload-zone" id="zoneLicense">
+                                    <input type="file" id="uploadLicense" name="fileLicense" required class="file-input" accept="image/*,.pdf">
+                                    <div class="upload-zone-content">
+                                        <i data-lucide="upload-cloud" class="upload-icon"></i>
+                                        <span class="upload-lbl">Driver License *</span>
+                                        <p class="upload-hint">Drag & Drop or Click</p>
+                                    </div>
+                                    <div class="upload-preview hidden">
+                                        <span class="preview-filename"></span>
+                                        <button type="button" class="remove-file-btn" onclick="removeUploadFile('zoneLicense')"><i data-lucide="x"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Insurance Card Slot -->
+                                <div class="upload-zone" id="zoneInsurance">
+                                    <input type="file" id="uploadInsurance" name="fileInsurance" required class="file-input" accept="image/*,.pdf">
+                                    <div class="upload-zone-content">
+                                        <i data-lucide="upload-cloud" class="upload-icon"></i>
+                                        <span class="upload-lbl">Insurance Card *</span>
+                                        <p class="upload-hint">Drag & Drop or Click</p>
+                                    </div>
+                                    <div class="upload-preview hidden">
+                                        <span class="preview-filename"></span>
+                                        <button type="button" class="remove-file-btn" onclick="removeUploadFile('zoneInsurance')"><i data-lucide="x"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Proof of Address Slot -->
+                                <div class="upload-zone" id="zoneAddress">
+                                    <input type="file" id="uploadAddress" name="fileAddress" required class="file-input" accept="image/*,.pdf">
+                                    <div class="upload-zone-content">
+                                        <i data-lucide="upload-cloud" class="upload-icon"></i>
+                                        <span class="upload-lbl">Proof of Address *</span>
+                                        <p class="upload-hint">Drag & Drop or Click</p>
+                                    </div>
+                                    <div class="upload-preview hidden">
+                                        <span class="preview-filename"></span>
+                                        <button type="button" class="remove-file-btn" onclick="removeUploadFile('zoneAddress')"><i data-lucide="x"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Selfie with License Slot -->
+                                <div class="upload-zone" id="zoneSelfie">
+                                    <input type="file" id="uploadSelfie" name="fileSelfie" class="file-input" accept="image/*">
+                                    <div class="upload-zone-content">
+                                        <i data-lucide="upload-cloud" class="upload-icon"></i>
+                                        <span class="upload-lbl">Selfie with License</span>
+                                        <p class="upload-hint">Drag & Drop or Click (Optional)</p>
+                                    </div>
+                                    <div class="upload-preview hidden">
+                                        <span class="preview-filename"></span>
+                                        <button type="button" class="remove-file-btn" onclick="removeUploadFile('zoneSelfie')"><i data-lucide="x"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="agreement-submission-box">
+                                <div class="checkbox-container">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" id="agreementCheckbox" required>
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-text">I have read and agree to the standardized Rental Agreement guidelines.</span>
+                                    </label>
+                                </div>
+                                <button type="button" class="btn btn-outline" onclick="openAgreementModal()">
+                                    <i data-lucide="file-text" class="icon-left"></i> <span>View Rental Agreement</span>
+                                </button>
+                            </div>
+                            
+                            <div class="form-actions-row">
+                                <button type="button" onclick="navigateStep(2)" class="btn btn-outline">
+                                    <span><i data-lucide="arrow-left" class="icon-left"></i> Back</span>
+                                </button>
+                                <button type="submit" class="btn btn-gold sheen-effect">
+                                    <span>Submit Rental Application <i data-lucide="check-circle2" class="icon-right"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <!-- Success Feedback State -->
+                    <div id="formSuccessState" class="form-success-wrapper hidden">
+                        <div class="success-icon-box">
+                            <i data-lucide="check-circle"></i>
+                            <div class="success-glow"></div>
+                        </div>
+                        <h3 class="success-title">APPLICATION RECEIVED</h3>
+                        <p class="success-message">Your rental application has been queued. Our verification desk will call or email you shortly. Save your request reference below.</p>
+                        <div class="success-reference">
+                            <span>Reference Code:</span>
+                            <strong id="refCode">MYC-8291-AZ</strong>
+                        </div>
+                        <button onclick="resetApplicationForm()" class="btn btn-gold sheen-effect">
+                            <span>Create Another Application</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AGREEMENT TEXT MODAL -->
+        <div class="modal" id="agreementModal">
+            <div class="modal-overlay" onclick="closeAgreementModal()"></div>
+            <div class="modal-content glass-panel">
+                <div class="modal-header">
+                    <h3 class="modal-title">MYCARZ RENTALS - CAR RENTAL AGREEMENT</h3>
+                    <button class="modal-close-btn" onclick="closeAgreementModal()"><i data-lucide="x"></i></button>
+                </div>
+                <div class="modal-body scrollable-content">
+                    <p class="modal-update-txt"><strong>Owner:</strong> Joris Jordan Holdings (MYCARZ RENTALS)</p>
+                    <p class="modal-update-txt"><strong>Legal Jurisdiction:</strong> United States</p>
+                    <hr class="modal-divider">
+                    
+                    <h4>1. IDENTIFICATION OF THE RENTAL VEHICLE</h4>
+                    <p>Owner hereby agrees to rent a passenger vehicle identified as follows: Make and model, Year, VIN, Color, and Plate Number (hereinafter referred to as "Rental Vehicle").</p>
+
+                    <h4>2. RENTAL TERM</h4>
+                    <p>The Owner hereby agrees to rent the Vehicle to the Renter for the duration specified in the application checkout details. The term of this agreement commences upon the pickup date and terminates upon return. Extension requests require a minimum of 2 days' notice prior to scheduled return; failure to notify may result in immediate request denial or additional administrative penalty fees.</p>
+
+                    <h4>3. MILEAGE</h4>
+                    <p>The Rental Vehicle has unlimited mileage per day within the agreed regional boundaries.</p>
+
+                    <h4>4. RENTAL FEES</h4>
+                    <p>Base fees are weekly. Weekly payments shall be due every Friday. The first payment is due once the rental agreement is signed by the client. Should the Renter fail to remit payment by 11:59 PM EST on the due date, a late fee of $50 shall be assessed. In the event payment is not received within 24 hours of the due date, the Owner reserves the right to disable and/or repossess the Rental Vehicle through the services of a security company.</p>
+
+                    <h4>5. RESPONSIBILITY FOR DAMAGE OR LOSS; REPORTING TO POLICE</h4>
+                    <p>You are responsible for damage to, or loss or theft of the Vehicle, including the cost of repair, or the actual cash retail value of the Vehicle if not repairable, plus loss of use and administrative expenses. You must report all accidents or incidents of theft/vandalism to us and the police immediately upon discovery.</p>
+
+                    <h4>6. INSURANCE COVERAGE & CLAIMS</h4>
+                    <p><strong>Option 1:</strong> You agree to provide your own auto insurance covering yourself, us, and the vehicle. You must list the rental company as an interested party on the policy.</p>
+                    <p><strong>Option 2:</strong> Purchase Renters Collision Protection (RCP) from the rental company for $20/day. RCP pays collision damage to the rented vehicle up to $20,000 with a $250 deductible. RCP is non-refundable.</p>
+                    <p><strong>Option 3:</strong> You agree to allow the rental car company to create you a personalized insurance policy covering the vehicle.</p>
+                    <p><strong>Insurance Claims:</strong> In the event of vehicle damage, the renter is responsible for paying a $1,000 insurance deductible. If a claim is not filed, the renter agrees to pay the Owner directly for repairs.</p>
+
+                    <h4>7. OUT OF STATE DRIVING & SMOKING</h4>
+                    <p><strong>Out of State Driving:</strong> Strictly prohibited. Driving outside the state terminates the agreement, and the renter assumes full responsibility for all associated towing fees, mechanical issues, or damages incurred outside state lines.</p>
+                    <p><strong>Smoking:</strong> Absolutely no smoking inside the vehicle. A smoking clean fee of $150 will be charged if any evidence of smoking is detected.</p>
+
+                    <h4>8. RETURNING VEHICLE</h4>
+                    <p>If the renter returns the vehicle mid-week (on or before Wednesday), the payment for the week will be prorated ( renter owes half of the weekly rate). If the renter returns the vehicle any day after Wednesday, they remain responsible for paying the full weekly rate.</p>
+
+                    <h4>9. BREACH OF CONTRACT</h4>
+                    <p>Includes failure to pay rental services, unauthorized use of vehicle, failure to return vehicle, negligence/misuse, allowing unauthorized drivers, and violation of traffic laws.</p>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="acceptAgreementInForm()" class="btn btn-gold sheen-effect">
+                        <span>I Understand & Agree</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CUSTOMER REVIEWS SECTION -->
+        <section class="reviews-section" id="testimonials">
+            <div class="container">
+                <div class="section-header scroll-reveal" style="text-align: center;">
+                    <span class="section-tag">TESTIMONIALS</span>
+                    <h2 class="section-title">CLIENT EXPERIENCE</h2>
+                    <p class="section-subtitle">Hear what our long-term lease renters say about their experience.</p>
+                </div>
+
+                <!-- Reviews Carousel Outer Container -->
+                <div class="reviews-carousel-wrapper scroll-reveal">
+                    
+                    <!-- Prev Arrow -->
+                    <button class="carousel-arrow carousel-prev" id="reviewsPrev" aria-label="Previous Review">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+
+                    <!-- Clipping container -->
+                    <div class="reviews-track-outer">
+                        <div class="reviews-track" id="reviewsTrack">
+
+                            <!-- REVIEW 1 -->
+                            <div class="review-card glass-panel">
+                                <div class="review-header">
+                                    <div class="review-user-block">
+                                        <div class="review-avatar" style="background-color: #EA4335;">M</div>
+                                        <div class="review-user-meta">
+                                            <h4 class="review-username">Marcus Thompson</h4>
+                                            <span class="review-date">2 weeks ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="google-badge">
+                                        <svg class="google-icon" viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                        </svg>
+                                        <span class="google-text">Google Review</span>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                </div>
+                                <p class="review-body-text">
+                                    The no-credit-check process was a lifesaver. I uploaded my driver's license and address proof, and within two hours I was driving a clean, modern Tucson. Truly a seamless experience! <a href="javascript:void(0)" class="read-more-link" onclick="openReviewModal('Marcus Thompson','2 weeks ago','M','#EA4335','The no-credit-check process was a lifesaver. I uploaded my driver&#39;s license and address proof, and within two hours I was driving a clean, modern Tucson. Truly a seamless experience! The staff were professional, the vehicle was spotless, and the whole rental process felt completely stress-free. I\'ve recommended MYCARZ to three of my coworkers already.')">Read more</a>
+                                </p>
+                            </div>
+
+                            <!-- REVIEW 2 -->
+                            <div class="review-card glass-panel">
+                                <div class="review-header">
+                                    <div class="review-user-block">
+                                        <div class="review-avatar" style="background-color: #4285F4;">A</div>
+                                        <div class="review-user-meta">
+                                            <h4 class="review-username">Amanda Ross</h4>
+                                            <span class="review-date">1 month ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="google-badge">
+                                        <svg class="google-icon" viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                        </svg>
+                                        <span class="google-text">Google Review</span>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                </div>
+                                <p class="review-body-text">
+                                    Outstanding customer support and vehicle maintenance. I had an issue mid-week, they sent a mobile mechanic to my workplace to check the tires immediately. Excellent monthly lease rates. <a href="javascript:void(0)" class="read-more-link" onclick="openReviewModal('Amanda Ross','1 month ago','A','#4285F4','Outstanding customer support and vehicle maintenance. I had an issue mid-week, they sent a mobile mechanic to my workplace to check the tires immediately. Excellent monthly lease rates. Three months in and every interaction has been prompt, professional, and honest. The vehicle is always returned clean and serviced. Absolute top-tier car rental service.')">Read more</a>
+                                </p>
+                            </div>
+
+                            <!-- REVIEW 3 -->
+                            <div class="review-card glass-panel">
+                                <div class="review-header">
+                                    <div class="review-user-block">
+                                        <div class="review-avatar" style="background-color: #34A853;">D</div>
+                                        <div class="review-user-meta">
+                                            <h4 class="review-username">Derrick Vance</h4>
+                                            <span class="review-date">2 months ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="google-badge">
+                                        <svg class="google-icon" viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                        </svg>
+                                        <span class="google-text">Google Review</span>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                </div>
+                                <p class="review-body-text">
+                                    Super clean cars, clear rental terms, and no security deposit since I paid with my credit card. Highly recommend MYCARZ for anybody needing a reliable long-term vehicle. <a href="javascript:void(0)" class="read-more-link" onclick="openReviewModal('Derrick Vance','2 months ago','D','#34A853','Super clean cars, clear rental terms, and no security deposit since I paid with my credit card. Highly recommend MYCARZ for anybody needing a reliable long-term vehicle. No hidden fees, no credit games. Just straightforward, honest car rental the way it should be. The Elantra I rented was smooth, fuel-efficient, and always freshly detailed.')">Read more</a>
+                                </p>
+                            </div>
+
+                            <!-- REVIEW 4 -->
+                            <div class="review-card glass-panel">
+                                <div class="review-header">
+                                    <div class="review-user-block">
+                                        <div class="review-avatar" style="background-color: #FBBC05;">K</div>
+                                        <div class="review-user-meta">
+                                            <h4 class="review-username">Kevin Peterson</h4>
+                                            <span class="review-date">2 months ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="google-badge">
+                                        <svg class="google-icon" viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                        </svg>
+                                        <span class="google-text">Google Review</span>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                </div>
+                                <p class="review-body-text">
+                                    Very professional company. Weekly rates are highly competitive. I've leased their Kia Sorento for two months now and the performance has been flawless. Insurance is included. <a href="javascript:void(0)" class="read-more-link" onclick="openReviewModal('Kevin Peterson','2 months ago','K','#FBBC05','Very professional company. Weekly rates are highly competitive. I&#39;ve leased their Kia Sorento for two months now and the performance has been flawless. Insurance is included and the approval only took about two hours. I drive 300+ miles per week and the unlimited mileage policy is a game changer. Couldn&#39;t be happier.')">Read more</a>
+                                </p>
+                            </div>
+
+                            <!-- REVIEW 5 -->
+                            <div class="review-card glass-panel">
+                                <div class="review-header">
+                                    <div class="review-user-block">
+                                        <div class="review-avatar" style="background-color: #673AB7;">S</div>
+                                        <div class="review-user-meta">
+                                            <h4 class="review-username">Sarah Jenkins</h4>
+                                            <span class="review-date">3 months ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="google-badge">
+                                        <svg class="google-icon" viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                        </svg>
+                                        <span class="google-text">Google Review</span>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                </div>
+                                <p class="review-body-text">
+                                    Amazing experience! The approval was instant and their weekly rates are unbeatable. The car was detailed beautifully and smelled fresh. Will definitely rent again. <a href="javascript:void(0)" class="read-more-link" onclick="openReviewModal('Sarah Jenkins','3 months ago','S','#673AB7','Amazing experience! The approval was instant and their weekly rates are unbeatable. The car was detailed beautifully and smelled fresh. Will definitely rent again. I was skeptical at first because I have no credit history, but MYCARZ made it completely seamless. Zero stress, zero judgment. Just great service and clean vehicles.')">Read more</a>
+                                </p>
+                            </div>
+
+                            <!-- REVIEW 6 -->
+                            <div class="review-card glass-panel">
+                                <div class="review-header">
+                                    <div class="review-user-block">
+                                        <div class="review-avatar" style="background-color: #009688;">J</div>
+                                        <div class="review-user-meta">
+                                            <h4 class="review-username">Jason Ward</h4>
+                                            <span class="review-date">4 months ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="google-badge">
+                                        <svg class="google-icon" viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                        </svg>
+                                        <span class="google-text">Google Review</span>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                    <i data-lucide="star" class="fill-gold"></i>
+                                </div>
+                                <p class="review-body-text">
+                                    Fast approval and a very smooth onboarding process. I was able to get a brand new Hyundai Elantra without any credit checks. The unlimited mileage policy is a huge bonus. <a href="javascript:void(0)" class="read-more-link" onclick="openReviewModal('Jason Ward','4 months ago','J','#009688','Fast approval and a very smooth onboarding process. I was able to get a brand new Hyundai Elantra without any credit checks. The unlimited mileage policy is a huge bonus for my commute. Their online portal is clean, upload is fast, and the staff respond within hours. By far the most convenient car rental experience I&#39;ve had in years.')">Read more</a>
+                                </p>
+                            </div>
+
+                        </div><!-- end reviews-track -->
+                    </div><!-- end reviews-track-outer -->
+
+                    <!-- Next Arrow -->
+                    <button class="carousel-arrow carousel-next" id="reviewsNext" aria-label="Next Review">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+
+                </div><!-- end reviews-carousel-wrapper -->
+
+                <!-- Dot Indicators -->
+                <div class="carousel-dots" id="reviewsDots"></div>
+
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">COMMON INQUIRIES</span>
+                    <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+                    <p class="section-subtitle">Find immediate answers to our most popular rental policy inquiries.</p>
+                </div>
+
+                <div class="faq-accordion-container scroll-reveal">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Do I need my own insurance?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-panel-content">
+                                No, you do not need your own insurance to start. You have options: (1) Transfer your existing auto insurance coverage, (2) Purchase our Renters Collision Protection (RCP) for $20/day, which covers up to $20,000 in damage with a $250 deductible, or (3) Request us to configure a custom personal policy coverage for you.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Can I rent monthly?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-panel-content">
+                                Yes. We specialize in both weekly and long-term monthly rentals. In fact, monthly terms receive discounted rates, decreasing your weekly equivalent pricing from $400/week to as low as $300/week depending on lease terms.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>How much is the deposit?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-panel-content">
+                                For credit card holders, the security deposit is waived ($0). For cash/debit card transactions, the refundable security deposit is $100 for Used vehicles and $200 for New vehicles, which is collected upon signing.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Can I return early?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-panel-content">
+                                Yes. If you return the vehicle mid-week (on or before Wednesday), your payment for that week will be prorated (you only owe half of the weekly rate). Returns on Thursday or later are responsible for the full weekly rate.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger">
+                            <span>Can I upload my documents online?</span>
+                            <i data-lucide="chevron-down" class="faq-arrow"></i>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-panel-content">
+                                Yes, our online portal features a secure multi-step application form. You can drag and drop your Driver License, Address Proof, and Insurance Card files directly into the web application for instant review.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+
+            <!-- Sparkle decorations -->
+            <span class="ftr-sparkle ftr-sp1">✦</span>
+            <span class="ftr-sparkle ftr-sp2">✦</span>
+            <span class="ftr-sparkle ftr-sp3">✦</span>
+            <span class="ftr-sparkle ftr-sp4">✦</span>
+            <span class="ftr-sparkle ftr-sp5">✦</span>
+
+            <!-- TOP GRID -->
+            <div class="footer-top">
+
+                <!-- COL 1: Brand -->
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <img src="assets/Logo White.png" alt="MYCARZ Logo" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc">
+                        MYCARZ offers reliable, affordable car rentals with flexible plans and excellent customer support, ensuring a convenient and hassle-free travel experience.
+                    </p>
+                    <div class="footer-contact-row">
+                        <a href="tel:+18005550199" class="ftr-contact-link">
+                            <i data-lucide="phone-call" class="ftr-contact-icon"></i>
+                            +1 (800) 555-0199
+                        </a>
+                        <a href="mailto:bookings@mycarzrentals.com" class="ftr-contact-link">
+                            <i data-lucide="mail" class="ftr-contact-icon"></i>
+                            bookings@mycarzrentals.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COL 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#cars">Our Fleet</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: Services -->
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Services</h4>
+                    <ul class="footer-links footer-services">
+                        <li><a href="#packages">Weekly Car Rental</a></li>
+                        <li><a href="#packages">Monthly Car Rental</a></li>
+                        <li><a href="#apply" class="ftr-highlight">No Credit Check Rental</a></li>
+                        <li><a href="#packages">Luxury Car Rental</a></li>
+                        <li><a href="#packages">SUV Rental</a></li>
+                        <li><a href="#packages">Airport Transfer</a></li>
+                        <li><a href="#packages">Roadside Assistance</a></li>
+                        <li><a href="#packages">Corporate Fleet</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: Newsletter + Payments -->
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Subscribe To The Newsletters</h4>
+                    <form class="ftr-newsletter" onsubmit="return false;">
+                        <input type="email" placeholder="Email" class="ftr-email-input" aria-label="Your email">
+                        <button type="submit" class="ftr-email-btn" aria-label="Subscribe">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+
+                    <div class="ftr-payments">
+                        <p class="ftr-payments-label">We Accept Online Payments</p>
+                        <div class="ftr-payment-icons">
+                            <!-- Mastercard -->
+                            <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" class="pay-icon">
+                                <rect width="38" height="24" rx="4" fill="#252525"/>
+                                <circle cx="15" cy="12" r="7" fill="#EB001B"/>
+                                <circle cx="23" cy="12" r="7" fill="#F79E1B"/>
+                                <path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/>
+                            </svg>
+                            <!-- Visa -->
+                            <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" class="pay-icon">
+                                <rect width="38" height="24" rx="4" fill="#1A1F71"/>
+                                <text x="5" y="17" font-size="11" fill="#FFFFFF" font-family="Arial" font-weight="bold" font-style="italic">VISA</text>
+                            </svg>
+                            <!-- PayPal -->
+                            <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" class="pay-icon">
+                                <rect width="38" height="24" rx="4" fill="#003087"/>
+                                <text x="4" y="17" font-size="8.5" fill="#009CDE" font-family="Arial" font-weight="bold">Pay</text>
+                                <text x="17" y="17" font-size="8.5" fill="#FFFFFF" font-family="Arial" font-weight="bold">Pal</text>
+                            </svg>
+                            <!-- Zelle -->
+                            <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" class="pay-icon">
+                                <rect width="38" height="24" rx="4" fill="#6D1ED4"/>
+                                <text x="6" y="17" font-size="10" fill="#FFFFFF" font-family="Arial" font-weight="bold">Zelle</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /footer-top -->
+
+            <!-- BOTTOM BAR -->
+            <div class="footer-bottom">
+                <p class="ftr-copy">&copy; 2026 MYCARZ Rentals. All rights reserved. Managed by Joris Jordan Holdings.</p>
+                <div class="ftr-socials">
+                    <a href="#facebook" aria-label="Facebook" class="ftr-social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#instagram" aria-label="Instagram" class="ftr-social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank" aria-label="YouTube" class="ftr-social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0E0E0E"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- /footer-inner -->
+    </footer>
+
+    <!-- MOBILE STICKY NAVIGATION BAR (App shell feel) -->
+
+
+    <!-- GOOGLE REVIEW DETAIL MODAL -->
+    <div class="review-modal" id="reviewDetailModal" onclick="if(event.target===this)closeReviewModal()">
+        <div class="review-modal-content">
+            <button class="review-modal-close" onclick="closeReviewModal()" aria-label="Close">&times;</button>
+            <div id="reviewModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Script Execution -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3323,8 +3323,14 @@ img {
     }
 
     .carousel-arrow {
-        display: none !important;
+        display: flex !important;
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
     }
+
+    .cars-carousel-wrapper .carousel-prev { left: -10px; }
+    .cars-carousel-wrapper .carousel-next { right: -10px; }
 
     .car-card {
         flex: 0 0 100%;

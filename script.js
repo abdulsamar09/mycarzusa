@@ -110,6 +110,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Touch / swipe support
         let startX = 0;
+        let isDragging = false;
+
+        // Touch events (mobile)
+        track.addEventListener("touchstart", e => { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
+        track.addEventListener("touchend",   e => {
+            if (!isDragging) return;
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); resetAuto(); }
+            isDragging = false;
+        }, { passive: true });
+
+        // Pointer events (desktop)
         track.addEventListener("pointerdown", e => { startX = e.clientX; });
         track.addEventListener("pointerup",   e => {
             const dx = e.clientX - startX;

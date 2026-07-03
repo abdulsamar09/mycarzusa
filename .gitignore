@@ -1,0 +1,5 @@
+# Exclude large zip archives
+assets/assets.zip
+
+# Exclude screenshots
+image.png

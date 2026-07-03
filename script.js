@@ -11,7 +11,25 @@ const PRICING_SCHEMA = {
             "2 Months": { weekly: 325, total: 2600, weeks: 8 },
             "3 Months": { weekly: 300, total: 3600, weeks: 12 }
         },
-        vehicles: ["2016 Hyundai Elantra", "2016 Hyundai Sonata", "2017 Hyundai Elantra"]
+        vehicles: [
+            "Hyundai Elantra (White) 2012",
+            "Honda Civic 2018",
+            "Toyota Camry 2017",
+            "Mercedes E-Class 2014",
+            "Toyota Prius (Gray)",
+            "Hyundai Sonata (Chantel)",
+            "Red Elantra 2013 (1)",
+            "Red Elantra 2013 (2)",
+            "Red Buick 2015",
+            "Blue Kia (Jasmin)",
+            "Toyota Camry (Henry) 2010",
+            "Blue Elantra 2012",
+            "Silver Elantra 2014",
+            "Silver Elantra 2017",
+            "Jeep 2014",
+            "Nissan 2017",
+            "Black Elantra 2014"
+        ]
     },
     new: {
         deposit: 200,
@@ -21,7 +39,14 @@ const PRICING_SCHEMA = {
             "2 Months": { weekly: 375, total: 3000, weeks: 8 },
             "3 Months": { weekly: 350, total: 4200, weeks: 12 }
         },
-        vehicles: ["2025 Hyundai Tucson", "2015 Kia Sorento", "2016 Hyundai Santa Fe"]
+        vehicles: [
+            "Hyundai (White) 2025 (1)",
+            "Hyundai (White) 2025 (2)",
+            "Hyundai (Red) 2025",
+            "Hyundai Kona 2025",
+            "Hyundai Tucson 2025",
+            "Mercedes 2024"
+        ]
     }
 };
 
@@ -43,100 +68,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // CARS CAROUSEL CONTROLLER
+    // CARS GRID PAGINATION CONTROLLER (LOAD MORE)
     (function() {
-        const track    = document.getElementById("carsTrack");
-        const prevBtn  = document.getElementById("carsPrev");
-        const nextBtn  = document.getElementById("carsNext");
-        const dotsEl   = document.getElementById("carsDots");
-        if (!track || !prevBtn || !nextBtn) return;
+        const grid = document.getElementById("carsGrid");
+        const btn = document.getElementById("loadMoreBtn");
+        if (!grid || !btn) return;
 
-        const cards      = Array.from(track.children);
-        const total      = cards.length;          // 6 cards
-        let   current    = 0;
-        let   autoTimer  = null;
+        const cards = Array.from(grid.querySelectorAll(".car-card"));
+        let visibleCount = 6;
 
-        function getVisibleCount() {
-            return window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
-        }
+        function updateVisibility() {
+            cards.forEach((card, index) => {
+                if (index < visibleCount) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
 
-        function getMaxIndex() {
-            return total - getVisibleCount();
-        }
-
-        // Build dots dynamically
-        function buildDots() {
-            dotsEl.innerHTML = "";
-            const maxIdx = getMaxIndex();
-            for (let i = 0; i <= maxIdx; i++) {
-                const d = document.createElement("button");
-                d.classList.add("carousel-dot");
-                d.setAttribute("aria-label", "Slide " + (i + 1));
-                d.addEventListener("click", () => goTo(i));
-                dotsEl.appendChild(d);
+            if (visibleCount >= cards.length) {
+                btn.style.display = "none";
+            } else {
+                btn.style.display = "inline-flex";
             }
         }
 
-        function goTo(idx) {
-            const maxIdx = getMaxIndex();
-            current = Math.max(0, Math.min(idx, maxIdx));
-            const cardW = cards[0].getBoundingClientRect().width;
-            const gap   = 28;
-            track.style.transform = "translateX(-" + (current * (cardW + gap)) + "px)";
-            
-            const dots = Array.from(dotsEl.children);
-            if (dots.length > 0) {
-                dots.forEach((d, i) => d.classList.toggle("active", i === current));
-            }
-            
-            prevBtn.style.opacity = current === 0      ? "0.35" : "1";
-            nextBtn.style.opacity = current === maxIdx ? "0.35" : "1";
-        }
-
-        function next() { 
-            const maxIdx = getMaxIndex();
-            goTo(current < maxIdx ? current + 1 : 0); 
-        }
-        function prev() { 
-            const maxIdx = getMaxIndex();
-            goTo(current > 0 ? current - 1 : maxIdx); 
-        }
-
-        nextBtn.addEventListener("click", () => { next(); resetAuto(); });
-        prevBtn.addEventListener("click", () => { prev(); resetAuto(); });
-
-        function startAuto() { autoTimer = setInterval(next, 4000); }
-        function resetAuto()  { clearInterval(autoTimer); startAuto(); }
-
-        // Touch / swipe support
-        let startX = 0;
-        let isDragging = false;
-
-        // Touch events (mobile)
-        track.addEventListener("touchstart", e => { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
-        track.addEventListener("touchend",   e => {
-            if (!isDragging) return;
-            const dx = e.changedTouches[0].clientX - startX;
-            if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); resetAuto(); }
-            isDragging = false;
-        }, { passive: true });
-
-        // Pointer events (desktop)
-        track.addEventListener("pointerdown", e => { startX = e.clientX; });
-        track.addEventListener("pointerup",   e => {
-            const dx = e.clientX - startX;
-            if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); resetAuto(); }
+        btn.addEventListener("click", () => {
+            visibleCount += 6;
+            updateVisibility();
         });
 
-        // Adjust tracking dimensions and dot counts on viewport resize
-        window.addEventListener("resize", () => {
-            buildDots();
-            goTo(current);
-        });
-
-        buildDots();
-        goTo(0);
-        startAuto();
+        // Initialize display
+        updateVisibility();
     })();
 
     // 1. FADE-OUT PRELOADER

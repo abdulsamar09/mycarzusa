@@ -16,6 +16,7 @@ const PRICING_SCHEMA = {
             "Honda Civic 2018",
             "Toyota Camry 2017",
             "Mercedes E-Class 2014",
+            "Mercedes Benz C300 2018",
             "Toyota Prius (Gray)",
             "Hyundai Sonata (Chantel)",
             "Red Elantra 2013 (1)",
@@ -28,6 +29,7 @@ const PRICING_SCHEMA = {
             "Silver Elantra 2017",
             "Jeep 2014",
             "Nissan 2017",
+            "Nissan Rogue Sport 2018",
             "Black Elantra 2014"
         ]
     },
@@ -44,8 +46,7 @@ const PRICING_SCHEMA = {
             "Hyundai (White) 2025 (2)",
             "Hyundai (Red) 2025",
             "Hyundai Kona 2025",
-            "Hyundai Tucson 2025",
-            "Mercedes 2024"
+            "Hyundai Tucson 2025"
         ]
     }
 };

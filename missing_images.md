@@ -1,6 +1,6 @@
 # Fleet Vehicle Images Status
 
-All **23 vehicles** in the fleet are now successfully configured with high-quality image assets. There are currently **0 missing images**.
+All **24 vehicles** in the fleet are now successfully configured with high-quality image assets. There are currently **0 missing images**.
 
 ---
 
@@ -16,7 +16,7 @@ All **23 vehicles** in the fleet are now successfully configured with high-quali
 | **6** | **Hyundai Tucson** | 2025 | `assets/NEW CAR IMAGES/WhatsApp Image 2026-07-03 at 5.51.14 AM (1).jpeg` |
 | **7** | **Honda Civic** | 2018 | `assets/NEW CAR IMAGES/WhatsApp Image 2026-07-03 at 5.51.06 AM.jpeg` |
 | **8** | **Toyota Camry** | 2017 | `assets/NEW CAR IMAGES/WhatsApp Image 2026-07-03 at 5.51.16 AM.jpeg` |
-| **9** | **Mercedes** | 2024 | `assets/NEW CAR IMAGES/WhatsApp Image 2026-07-03 at 5.51.13 AM (3).jpeg` |
+| **9** | **Mercedes Benz C300** | 2018 | `assets/CAR PRODUCT SOME IMAGES FOR LIST/2018 Mercedes Benz C300.jpeg` |
 | **10** | **Mercedes E-Class** | 2014 | `assets/missing image/2014 Mercedes-Benz E-Class.jpg` |
 | **11** | **Toyota Prius (Gray)** | — | `assets/missing image/Toyota Prius (Gray).png` |
 | **12** | **Hyundai Sonata (Chantel)** | — | `assets/sonata_2016.png` |
@@ -31,3 +31,4 @@ All **23 vehicles** in the fleet are now successfully configured with high-quali
 | **21** | **Jeep** | 2014 | `assets/missing image/Jeep 2014 black.jpg` |
 | **22** | **Nissan** | 2017 | `assets/CAR PRODUCT SOME IMAGES FOR LIST/2018 Nissan rogue sports.jpeg` |
 | **23** | **Black Elantra** | 2014 | `assets/missing image/Black Elantra 2014.jpg` |
+| **24** | **Nissan Rogue Sport** | 2018 | `assets/CAR PRODUCT SOME IMAGES FOR LIST/2018 Nissan rogue sports.jfif` |

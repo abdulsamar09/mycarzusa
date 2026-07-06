@@ -42,6 +42,7 @@ const PRICING_SCHEMA = {
             "3 Months": { weekly: 350, total: 4200, weeks: 12 }
         },
         vehicles: [
+            "Mercedes Cle 300 2026",
             "Hyundai (White) 2025 (1)",
             "Hyundai (White) 2025 (2)",
             "Hyundai (Red) 2025",

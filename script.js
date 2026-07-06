@@ -16,7 +16,7 @@ const PRICING_SCHEMA = {
             "Honda Civic 2018",
             "Toyota Camry 2017",
             "Mercedes E-Class 2014",
-            "Mercedes Benz C300 2018",
+            "Mercedes Benz C300 2024",
             "Toyota Prius (Gray)",
             "Hyundai Sonata (Chantel)",
             "Red Elantra 2013 (1)",

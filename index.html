@@ -50,20 +50,19 @@
             <!-- Desktop Nav -->
             <nav class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
-                <a href="#cars" class="nav-link">Our Cars</a>
+                <a href="ourcars.html" class="nav-link">Our Cars</a>
                 <a href="#packages" class="nav-link">Rental Packages</a>
                 <a href="#how-it-works" class="nav-link">How It Works</a>
                 <a href="#documents" class="nav-link">Requirements</a>
-                <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
             <div class="header-actions">
-                <a href="tel:+18005550199" class="phone-btn">
+                <a href="tel:+14435016702" class="phone-btn">
                     <i data-lucide="phone" class="icon-small"></i>
-                    <span>(800) 555-0199</span>
+                    <span>(443) 501-6702</span>
                 </a>
-                <a href="#apply" class="btn btn-gold sheen-effect">
-                    <span>Apply Now <i data-lucide="calendar" class="icon-right"></i></span>
+                <a href="applyfor.html" class="btn btn-gold sheen-effect">
+                    <span>Apply for Vehicle <i data-lucide="calendar" class="icon-right"></i></span>
                 </a>
             </div>
 
@@ -80,18 +79,17 @@
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-links">
             <a href="#home" class="mobile-link">Home</a>
-            <a href="#cars" class="mobile-link">Our Cars</a>
+            <a href="ourcars.html" class="mobile-link">Our Cars</a>
             <a href="#packages" class="mobile-link">Rental Packages</a>
             <a href="#how-it-works" class="mobile-link">How It Works</a>
             <a href="#documents" class="mobile-link">Requirements</a>
-            <a href="#contact" class="mobile-link">Contact</a>
         </div>
         <div class="mobile-nav-actions">
-            <a href="tel:+18005550199" class="mobile-phone-btn">
-                <i data-lucide="phone"></i> Call (800) 555-0199
+            <a href="tel:+14435016702" class="mobile-phone-btn">
+                <i data-lucide="phone"></i> Call (443) 501-6702
             </a>
-            <a href="#apply" class="btn btn-gold sheen-effect">
-                <span>Apply Now <i data-lucide="calendar" class="icon-right"></i></span>
+            <a href="applyfor.html" class="btn btn-gold sheen-effect">
+                <span>Apply for Vehicle <i data-lucide="calendar" class="icon-right"></i></span>
             </a>
         </div>
     </div>
@@ -133,11 +131,11 @@
                     </div>
 
                     <div class="hero-actions scroll-reveal">
-                        <a href="#cars" class="btn btn-gold sheen-effect">
+                        <a href="ourcars.html" class="btn btn-gold sheen-effect">
                             <span>View Cars <i data-lucide="car" class="icon-right"></i></span>
                         </a>
-                        <a href="#apply" class="btn btn-outline">
-                            <span>Apply Now <i data-lucide="arrow-right" class="icon-right"></i></span>
+                        <a href="applyfor.html" class="btn btn-outline">
+                            <span>Apply for Vehicle <i data-lucide="arrow-right" class="icon-right"></i></span>
                         </a>
                     </div><!-- end hero-actions -->
                 </div><!-- end hero-content -->
@@ -204,7 +202,7 @@
                                     class="why-oval-img">
                             </div>
                             <div class="why-car-overlay">
-                                <img src="assets/pngwing.com (2).png" alt="Featured Hyundai Vehicle"
+                                <img src="assets/Mercedes Benz C300.png" alt="Featured Hyundai Vehicle"
                                     class="why-car-img-overlay">
                             </div>
                         </div>
@@ -370,7 +368,7 @@
             </div>
         </section>
 
-        <!-- FEATURED FLEET (CAR GRID) -->
+        <!-- FEATURED FLEET (CAR CAROUSEL) -->
         <section class="cars-section" id="cars">
             <div class="container">
                 <div class="section-header scroll-reveal">
@@ -380,645 +378,201 @@
                         vehicle to view specifications.</p>
                 </div>
 
-                <!-- CARS GRID -->
-                <div class="cars-grid" id="carsGrid">
+                <!-- CARS CAROUSEL -->
+                <div class="cars-carousel-wrapper scroll-reveal">
+                    <!-- Prev Arrow -->
+                    <button class="cars-carousel-arrow prev" id="carsCarouselPrev" aria-label="Previous Vehicle">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
 
-                    <!-- CAR 1: Hyundai Elantra (White) 2012 -->
-                    <div class="car-card glass-panel" data-car="Hyundai Elantra (White) 2012">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Hyundai%20Elantra%202012.jpg" alt="Hyundai Elantra (White)" class="car-img">
-                            <span class="car-year">2012</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Hyundai Elantra (White)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
+                    <!-- Clipping container -->
+                    <div class="cars-carousel-outer">
+                        <div class="cars-carousel-track" id="carsCarouselTrack">
+
+                            <!-- CAR 1: Hyundai Tucson 2025 -->
+                            <div class="car-card glass-panel" data-car="Hyundai Tucson 2025">
+                                <div class="car-image-container">
+                                    <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.14%20AM%20(1).jpeg"
+                                        alt="Hyundai Tucson" class="car-img">
+                                    <span class="car-year">2025</span>
                                 </div>
-                                <button onclick="selectVehicle('Hyundai Elantra (White) 2012')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
+                                <div class="car-details">
+                                    <h3 class="car-name">Hyundai Tucson</h3>
+                                    <div class="car-meta">
+                                        <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                        <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                    </div>
+                                    <div class="car-footer">
+                                        <div class="car-price-box">
+                                            <span class="price-lbl">Pricing</span>
+                                            <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call
+                                                for Best
+                                                Rates</span>
+                                        </div>
+                                        <button onclick="selectVehicle('Hyundai Tucson 2025')"
+                                            class="btn btn-gold-outline btn-small sheen-effect">
+                                            <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- CAR 2: Honda Civic 2018 -->
+                            <div class="car-card glass-panel" data-car="Honda Civic 2018">
+                                <div class="car-image-container">
+                                    <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.06%20AM.jpeg"
+                                        alt="Honda Civic" class="car-img">
+                                    <span class="car-year">2018</span>
+                                </div>
+                                <div class="car-details">
+                                    <h3 class="car-name">Honda Civic</h3>
+                                    <div class="car-meta">
+                                        <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                        <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                    </div>
+                                    <div class="car-footer">
+                                        <div class="car-price-box">
+                                            <span class="price-lbl">Pricing</span>
+                                            <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call
+                                                for Best
+                                                Rates</span>
+                                        </div>
+                                        <button onclick="selectVehicle('Honda Civic 2018')"
+                                            class="btn btn-gold-outline btn-small sheen-effect">
+                                            <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CAR 3: Toyota Camry 2017 -->
+                            <div class="car-card glass-panel" data-car="Toyota Camry 2017">
+                                <div class="car-image-container">
+                                    <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.16%20AM.jpeg"
+                                        alt="Toyota Camry" class="car-img">
+                                    <span class="car-year">2017</span>
+                                </div>
+                                <div class="car-details">
+                                    <h3 class="car-name">Toyota Camry</h3>
+                                    <div class="car-meta">
+                                        <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                        <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                    </div>
+                                    <div class="car-footer">
+                                        <div class="car-price-box">
+                                            <span class="price-lbl">Pricing</span>
+                                            <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call
+                                                for Best
+                                                Rates</span>
+                                        </div>
+                                        <button onclick="selectVehicle('Toyota Camry 2017')"
+                                            class="btn btn-gold-outline btn-small sheen-effect">
+                                            <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CAR 4: Mercedes Benz C300 2018 -->
+                            <div class="car-card glass-panel" data-car="Mercedes Benz C300 2018">
+                                <div class="car-image-container">
+                                    <img src="assets/CAR%20PRODUCT%20SOME%20IMAGES%20FOR%20LIST/2018%20Mercedes%20Benz%20C300.jpeg"
+                                        alt="Mercedes Benz C300" class="car-img">
+                                    <span class="car-year">2018</span>
+                                </div>
+                                <div class="car-details">
+                                    <h3 class="car-name">Mercedes Benz C300</h3>
+                                    <div class="car-meta">
+                                        <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                        <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                    </div>
+                                    <div class="car-footer">
+                                        <div class="car-price-box">
+                                            <span class="price-lbl">Pricing</span>
+                                            <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call
+                                                for Best Rates</span>
+                                        </div>
+                                        <button onclick="selectVehicle('Mercedes Benz C300 2018')"
+                                            class="btn btn-gold-outline btn-small sheen-effect">
+                                            <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CAR 5: Jeep 2014 -->
+                            <div class="car-card glass-panel" data-car="Jeep 2014">
+                                <div class="car-image-container">
+                                    <img src="assets/missing%20image/Jeep%202014%20black.jpg" alt="Jeep"
+                                        class="car-img">
+                                    <span class="car-year">2014</span>
+                                </div>
+                                <div class="car-details">
+                                    <h3 class="car-name">Jeep</h3>
+                                    <div class="car-meta">
+                                        <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                        <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                    </div>
+                                    <div class="car-footer">
+                                        <div class="car-price-box">
+                                            <span class="price-lbl">Pricing</span>
+                                            <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call
+                                                for Best
+                                                Rates</span>
+                                        </div>
+                                        <button onclick="selectVehicle('Jeep 2014')"
+                                            class="btn btn-gold-outline btn-small sheen-effect">
+                                            <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CAR 6: Hyundai Kona 2025 -->
+                            <div class="car-card glass-panel" data-car="Hyundai Kona 2025">
+                                <div class="car-image-container">
+                                    <img src="assets/NEW CAR IMAGES/kona-elentra.jpeg" alt="Hyundai Kona"
+                                        class="car-img">
+                                    <span class="car-year">2025</span>
+                                </div>
+                                <div class="car-details">
+                                    <h3 class="car-name">Hyundai Kona</h3>
+                                    <div class="car-meta">
+                                        <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                                        <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                                    </div>
+                                    <div class="car-footer">
+                                        <div class="car-price-box">
+                                            <span class="price-lbl">Pricing</span>
+                                            <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call
+                                                for Best
+                                                Rates</span>
+                                        </div>
+                                        <button onclick="selectVehicle('Hyundai Kona 2025')"
+                                            class="btn btn-gold-outline btn-small sheen-effect">
+                                            <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- CAR 2: Hyundai (White) 2025 (1) -->
-                    <div class="car-card glass-panel" data-car="Hyundai (White) 2025 (1)">
-                        <div class="car-image-container">
-                            <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.15%20AM%20(1).jpeg"
-                                alt="Hyundai (White) (1)" class="car-img">
-                            <span class="car-year">2025 (1)</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Hyundai (White) (1)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Hyundai (White) 2025 (1)')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Next Arrow -->
+                    <button class="cars-carousel-arrow next" id="carsCarouselNext" aria-label="Next Vehicle">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
 
-                    <!-- CAR 3: Hyundai (White) 2025 (2) -->
-                    <div class="car-card glass-panel" data-car="Hyundai (White) 2025 (2)">
-                        <div class="car-image-container">
-                            <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.15%20AM%20(2).jpeg"
-                                alt="Hyundai (White) (2)" class="car-img">
-                            <span class="car-year">2025 (2)</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Hyundai (White) (2)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Hyundai (White) 2025 (2)')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 4: Hyundai (Red) 2025 -->
-                    <div class="car-card glass-panel" data-car="Hyundai (Red) 2025">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Hyundai%20(Red).jpg" alt="Hyundai (Red)" class="car-img">
-                            <span class="car-year">2025</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Hyundai (Red)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Hyundai (Red) 2025')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 5: Hyundai Kona 2025 -->
-                    <div class="car-card glass-panel" data-car="Hyundai Kona 2025">
-                        <div class="car-image-container">
-                            <img src="assets/NEW CAR IMAGES/kona-elentra.jpeg" alt="Hyundai Kona" class="car-img">
-                            <span class="car-year">2025</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Hyundai Kona</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Hyundai Kona 2025')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 6: Hyundai Tucson 2025 -->
-                    <div class="car-card glass-panel" data-car="Hyundai Tucson 2025">
-                        <div class="car-image-container">
-                            <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.14%20AM%20(1).jpeg"
-                                alt="Hyundai Tucson" class="car-img">
-                            <span class="car-year">2025</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Hyundai Tucson</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Hyundai Tucson 2025')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 7: Honda Civic 2018 -->
-                    <div class="car-card glass-panel" data-car="Honda Civic 2018">
-                        <div class="car-image-container">
-                            <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.06%20AM.jpeg"
-                                alt="Honda Civic" class="car-img">
-                            <span class="car-year">2018</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Honda Civic</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Honda Civic 2018')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 8: Toyota Camry 2017 -->
-                    <div class="car-card glass-panel" data-car="Toyota Camry 2017">
-                        <div class="car-image-container">
-                            <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.16%20AM.jpeg"
-                                alt="Toyota Camry" class="car-img">
-                            <span class="car-year">2017</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Toyota Camry</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Toyota Camry 2017')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 9: Mercedes Benz C300 2018 -->
-                    <div class="car-card glass-panel" data-car="Mercedes Benz C300 2018">
-                        <div class="car-image-container">
-                            <img src="assets/CAR%20PRODUCT%20SOME%20IMAGES%20FOR%20LIST/2018%20Mercedes%20Benz%20C300.jpeg"
-                                alt="Mercedes Benz C300" class="car-img">
-                            <span class="car-year">2018</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Mercedes Benz C300</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Mercedes Benz C300 2018')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 10: Mercedes E-Class 2014 -->
-                    <div class="car-card glass-panel" data-car="Mercedes E-Class 2014">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/2014%20Mercedes-Benz%20E-Class.jpg" alt="Mercedes E-Class" class="car-img">
-                            <span class="car-year">2014</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Mercedes E-Class</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Mercedes E-Class 2014')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 11: Toyota Prius (Gray) -->
-                    <div class="car-card glass-panel" data-car="Toyota Prius (Gray)">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Toyota%20Prius%20(Gray).png" alt="Toyota Prius (Gray)" class="car-img">
-                            <span class="car-year">—</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Toyota Prius (Gray)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Hybrid</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Toyota Prius (Gray)')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 12: Hyundai Sonata (Chantel) -->
-                    <div class="car-card glass-panel" data-car="Hyundai Sonata (Chantel)">
-                        <div class="car-image-container">
-                            <img src="assets/sonata_2016.png" alt="Hyundai Sonata (Chantel)" class="car-img">
-                            <span class="car-year">—</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Hyundai Sonata (Chantel)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Hyundai Sonata (Chantel)')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 13: Red Elantra 2013 (1) -->
-                    <div class="car-card glass-panel" data-car="Red Elantra 2013 (1)">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Red%20Elantra.webp" alt="Red Elantra (1)" class="car-img">
-                            <span class="car-year">2013 (1)</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Red Elantra (1)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Red Elantra 2013 (1)')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 14: Red Elantra 2013 (2) -->
-                    <div class="car-card glass-panel" data-car="Red Elantra 2013 (2)">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Red%20Elantra.webp" alt="Red Elantra (2)" class="car-img">
-                            <span class="car-year">2013 (2)</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Red Elantra (2)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Red Elantra 2013 (2)')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 15: Red Buick 2015 -->
-                    <div class="car-card glass-panel" data-car="Red Buick 2015">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Red%20Buick%202015.webp" alt="Red Buick" class="car-img">
-                            <span class="car-year">2015</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Red Buick</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Red Buick 2015')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 16: Blue Kia (Jasmin) -->
-                    <div class="car-card glass-panel" data-car="Blue Kia (Jasmin)">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Blue%20Kia%20(Jasmin).jpg" alt="Blue Kia (Jasmin)" class="car-img">
-                            <span class="car-year">—</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Blue Kia (Jasmin)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Blue Kia (Jasmin)')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 17: Toyota Camry (Henry) 2010 -->
-                    <div class="car-card glass-panel" data-car="Toyota Camry (Henry) 2010">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Toyota%20Camry%20(Henry)%202010.avif" alt="Toyota Camry (Henry)" class="car-img">
-                            <span class="car-year">2010</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Toyota Camry (Henry)</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Toyota Camry (Henry) 2010')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 18: Blue Elantra 2012 -->
-                    <div class="car-card glass-panel" data-car="Blue Elantra 2012">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Blue%20Elantra%202012.jpg" alt="Blue Elantra" class="car-img">
-                            <span class="car-year">2012</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Blue Elantra</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Blue Elantra 2012')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 19: Silver Elantra 2014 -->
-                    <div class="car-card glass-panel" data-car="Silver Elantra 2014">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/2014_Hyundai_Elantra.jpeg" alt="Silver Elantra" class="car-img">
-                            <span class="car-year">2014</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Silver Elantra</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Silver Elantra 2014')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 20: Silver Elantra 2017 -->
-                    <div class="car-card glass-panel" data-car="Silver Elantra 2017">
-                        <div class="car-image-container">
-                            <img src="assets/2017%20Hyundai%20Elentra.jpg" alt="Silver Elantra" class="car-img">
-                            <span class="car-year">2017</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Silver Elantra</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Silver Elantra 2017')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 21: Jeep 2014 -->
-                    <div class="car-card glass-panel" data-car="Jeep 2014">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Jeep%202014%20black.jpg" alt="Jeep" class="car-img">
-                            <span class="car-year">2014</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Jeep</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Jeep 2014')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 22: Nissan 2017 -->
-                    <div class="car-card glass-panel" data-car="Nissan 2017">
-                        <div class="car-image-container">
-                            <img src="assets/CAR%20PRODUCT%20SOME%20IMAGES%20FOR%20LIST/2018%20Nissan%20rogue%20sports.jpeg"
-                                alt="Nissan" class="car-img">
-                            <span class="car-year">2017</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Nissan</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Nissan 2017')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 23: Black Elantra 2014 -->
-                    <div class="car-card glass-panel" data-car="Black Elantra 2014">
-                        <div class="car-image-container">
-                            <img src="assets/missing%20image/Black%20Elantra%202014.jpg" alt="Black Elantra" class="car-img">
-                            <span class="car-year">2014</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Black Elantra</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best
-                                        Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Black Elantra 2014')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CAR 24: Nissan Rogue Sport 2018 -->
-                    <div class="car-card glass-panel" data-car="Nissan Rogue Sport 2018">
-                        <div class="car-image-container">
-                            <img src="assets/CAR%20PRODUCT%20SOME%20IMAGES%20FOR%20LIST/2018%20Nissan%20rogue%20sports.jfif" alt="Nissan Rogue Sport 2018" class="car-img">
-                            <span class="car-year">2018</span>
-                        </div>
-                        <div class="car-details">
-                            <h3 class="car-name">Nissan Rogue Sport</h3>
-                            <div class="car-meta">
-                                <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
-                                <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
-                            </div>
-                            <div class="car-footer">
-                                <div class="car-price-box">
-                                    <span class="price-lbl">Pricing</span>
-                                    <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best Rates</span>
-                                </div>
-                                <button onclick="selectVehicle('Nissan Rogue Sport 2018')"
-                                    class="btn btn-gold-outline btn-small sheen-effect">
-                                    <span><i data-lucide="car" class="icon-left"></i> Select</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- Dots -->
+                    <div class="cars-carousel-dots" id="carsCarouselDots"></div>
                 </div>
 
-                <!-- Load More Button -->
-                <div class="load-more-container" style="display: flex; justify-content: center; margin-top: 50px;">
-                    <button id="loadMoreBtn" class="btn btn-gold sheen-effect">
-                        <span>Load More <i data-lucide="plus" class="icon-right"></i></span>
-                    </button>
+                <!-- View All Vehicles Button -->
+                <div class="view-all-container scroll-reveal">
+                    <a href="ourcars.html" class="btn btn-gold sheen-effect">
+                        <span>View All Vehicles <i data-lucide="arrow-right" class="icon-right"></i></span>
+                    </a>
                 </div>
 
             </div>
@@ -1889,9 +1443,9 @@
                         support, ensuring a convenient and hassle-free travel experience.
                     </p>
                     <div class="footer-contact-row">
-                        <a href="tel:+18005550199" class="ftr-contact-link">
+                        <a href="tel:+14435016702" class="ftr-contact-link">
                             <i data-lucide="phone-call" class="ftr-contact-icon"></i>
-                            +1 (800) 555-0199
+                            +1 (443) 501-6702
                         </a>
                         <a href="mailto:bookings@mycarzrentals.com" class="ftr-contact-link">
                             <i data-lucide="mail" class="ftr-contact-icon"></i>
@@ -1905,7 +1459,7 @@
                     <h4 class="footer-col-heading">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#cars">Our Fleet</a></li>
+                        <li><a href="ourcars.html">Our Fleet</a></li>
                         <li><a href="#packages">Packages</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#contact">Contact Us</a></li>
@@ -1918,7 +1472,7 @@
                     <ul class="footer-links footer-services">
                         <li><a href="#packages">Weekly Car Rental</a></li>
                         <li><a href="#packages">Monthly Car Rental</a></li>
-                        <li><a href="#apply" class="ftr-highlight">No Credit Check Rental</a></li>
+                        <li><a href="applyfor.html" class="ftr-highlight">No Credit Check Rental</a></li>
                         <li><a href="#packages">Luxury Car Rental</a></li>
                         <li><a href="#packages">SUV Rental</a></li>
                         <li><a href="#packages">Airport Transfer</a></li>

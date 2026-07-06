@@ -69,38 +69,126 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // CARS GRID PAGINATION CONTROLLER (LOAD MORE)
+    // PARSE QUERY PARAMETERS ON PAGE LOAD
     (function() {
-        const grid = document.getElementById("carsGrid");
-        const btn = document.getElementById("loadMoreBtn");
-        if (!grid || !btn) return;
-
-        const cards = Array.from(grid.querySelectorAll(".car-card"));
-        let visibleCount = 6;
-
-        function updateVisibility() {
-            cards.forEach((card, index) => {
-                if (index < visibleCount) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
+        const urlParams = new URLSearchParams(window.location.search);
+        const carParam = urlParams.get('car');
+        const durationParam = urlParams.get('duration');
+        if (carParam) {
+            const vehicleDropdown = document.getElementById("vehicleDropdown");
+            if (vehicleDropdown) {
+                let found = false;
+                for (let i = 0; i < vehicleDropdown.options.length; i++) {
+                    if (vehicleDropdown.options[i].value === carParam || vehicleDropdown.options[i].text.includes(carParam)) {
+                        vehicleDropdown.selectedIndex = i;
+                        found = true;
+                        break;
+                    }
                 }
-            });
+                if (found) {
+                    const rentalDuration = document.getElementById("rentalDuration");
+                    if (rentalDuration) {
+                        if (durationParam) {
+                            const selectLabel = durationParam.charAt(0).toUpperCase() + durationParam.slice(1);
+                            if (selectLabel === "Monthly") rentalDuration.value = "Monthly";
+                            else if (selectLabel === "Weekly") rentalDuration.value = "Weekly";
+                            else if (selectLabel.includes("2")) rentalDuration.value = "2 Months";
+                            else if (selectLabel.includes("3")) rentalDuration.value = "3 Months";
+                        } else {
+                            rentalDuration.value = "Monthly";
+                        }
+                    }
+                    
+                    updateDynamicRates();
+                    navigateStep(2);
+                    
+                    const applySection = document.getElementById("apply");
+                    if (applySection) {
+                        setTimeout(() => {
+                            applySection.scrollIntoView({ behavior: "smooth" });
+                        }, 500);
+                    }
+                }
+            }
+        }
+    })();
 
-            if (visibleCount >= cards.length) {
-                btn.style.display = "none";
-            } else {
-                btn.style.display = "inline-flex";
+    // CARS CAROUSEL/SLIDER INITIALIZATION
+    (function() {
+        const track = document.getElementById("carsCarouselTrack");
+        const prevBtn = document.getElementById("carsCarouselPrev");
+        const nextBtn = document.getElementById("carsCarouselNext");
+        const dotsEl = document.getElementById("carsCarouselDots");
+        if (!track || !prevBtn || !nextBtn || !dotsEl) return;
+
+        const cards = Array.from(track.children);
+        const total = cards.length;
+        let current = 0;
+
+        function getVisibleCount() {
+            return window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+        }
+
+        function getMaxIndex() {
+            return Math.max(0, total - getVisibleCount());
+        }
+
+        function buildDots() {
+            dotsEl.innerHTML = "";
+            const maxIdx = getMaxIndex();
+            for (let i = 0; i <= maxIdx; i++) {
+                const d = document.createElement("button");
+                d.classList.add("cars-carousel-dot");
+                d.setAttribute("aria-label", "Slide " + (i + 1));
+                d.addEventListener("click", () => goTo(i));
+                dotsEl.appendChild(d);
             }
         }
 
-        btn.addEventListener("click", () => {
-            visibleCount += 6;
-            updateVisibility();
+        function goTo(idx) {
+            const maxIdx = getMaxIndex();
+            current = Math.max(0, Math.min(idx, maxIdx));
+            const cardW = cards[0].getBoundingClientRect().width;
+            const gap = 30; // match style.css gap
+            track.style.transform = "translateX(-" + (current * (cardW + gap)) + "px)";
+
+            const dots = Array.from(dotsEl.children);
+            if (dots.length > 0) {
+                dots.forEach((d, i) => d.classList.toggle("active", i === current));
+            }
+
+            prevBtn.style.opacity = current === 0 ? "0.35" : "1";
+            nextBtn.style.opacity = current === maxIdx ? "0.35" : "1";
+        }
+
+        function next() {
+            const maxIdx = getMaxIndex();
+            goTo(current < maxIdx ? current + 1 : 0);
+        }
+
+        function prev() {
+            const maxIdx = getMaxIndex();
+            goTo(current > 0 ? current - 1 : maxIdx);
+        }
+
+        nextBtn.addEventListener("click", () => next());
+        prevBtn.addEventListener("click", () => prev());
+
+        // Touch / swipe support
+        let startX = 0;
+        track.addEventListener("pointerdown", e => { startX = e.clientX; });
+        track.addEventListener("pointerup", e => {
+            const dx = e.clientX - startX;
+            if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
         });
 
-        // Initialize display
-        updateVisibility();
+        window.addEventListener("resize", () => {
+            buildDots();
+            goTo(current);
+        });
+
+        buildDots();
+        goTo(0);
     })();
 
     // 1. FADE-OUT PRELOADER
@@ -369,6 +457,9 @@ function selectVehicle(carName) {
         if (applySection) {
             applySection.scrollIntoView({ behavior: "smooth" });
         }
+    } else {
+        // Redirect to applyfor.html with parameters
+        window.location.href = `applyfor.html?car=${encodeURIComponent(carName)}`;
     }
 }
 
@@ -379,24 +470,29 @@ function selectRentalPlan(tier, durationLabel) {
     const defaultCar = vehiclesOfTier[0];
     
     const vehicleDropdown = document.getElementById("vehicleDropdown");
-    if (vehicleDropdown) vehicleDropdown.value = defaultCar;
+    if (vehicleDropdown) {
+        vehicleDropdown.value = defaultCar;
 
-    // Select duration
-    const rentalDuration = document.getElementById("rentalDuration");
-    const selectLabel = durationLabel.charAt(0).toUpperCase() + durationLabel.slice(1);
-    if (rentalDuration) {
-        if (selectLabel === "Monthly") rentalDuration.value = "Monthly";
-        else if (selectLabel === "Weekly") rentalDuration.value = "Weekly";
-        else if (selectLabel.includes("2")) rentalDuration.value = "2 Months";
-        else if (selectLabel.includes("3")) rentalDuration.value = "3 Months";
-    }
+        // Select duration
+        const rentalDuration = document.getElementById("rentalDuration");
+        const selectLabel = durationLabel.charAt(0).toUpperCase() + durationLabel.slice(1);
+        if (rentalDuration) {
+            if (selectLabel === "Monthly") rentalDuration.value = "Monthly";
+            else if (selectLabel === "Weekly") rentalDuration.value = "Weekly";
+            else if (selectLabel.includes("2")) rentalDuration.value = "2 Months";
+            else if (selectLabel.includes("3")) rentalDuration.value = "3 Months";
+        }
 
-    updateDynamicRates();
-    navigateStep(2);
+        updateDynamicRates();
+        navigateStep(2);
 
-    const applySection = document.getElementById("apply");
-    if (applySection) {
-        applySection.scrollIntoView({ behavior: "smooth" });
+        const applySection = document.getElementById("apply");
+        if (applySection) {
+            applySection.scrollIntoView({ behavior: "smooth" });
+        }
+    } else {
+        // Redirect to applyfor.html with parameters
+        window.location.href = `applyfor.html?car=${encodeURIComponent(defaultCar)}&duration=${encodeURIComponent(durationLabel)}`;
     }
 }
 

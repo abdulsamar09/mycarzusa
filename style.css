@@ -939,30 +939,15 @@ img {
 /* RENTAL PACKAGES SECTION */
 .packages-section {
     padding: 120px 0;
-    position: relative;
-    background: var(--color-bg);
-    /* Background image with fixed parallax feel */
-    background-image: url('assets/carss.jpg');
-    background-size: cover;
-    background-position: center 60%;
-    background-attachment: fixed;
-    isolation: isolate;
+    background: #f4f4f6;
 }
 
-/* White overlay — keeps the cards fully legible */
-.packages-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.70);
-    z-index: 0;
-}
-
-/* Ensure inner content sits above the overlay */
+/* Ensure inner content sits above any stacking contexts */
 .packages-section > .container {
     position: relative;
     z-index: 1;
 }
+
 
 .packages-grid {
     display: grid;
@@ -4223,3 +4208,208 @@ body.overflow-hidden {
         gap: 20px;
     }
 }
+
+/* ============================================================
+   BREADCRUMB HERO SECTION & CAROUSEL SLIDER STYLING
+   ============================================================ */
+
+/* Breadcrumb Hero Section */
+.breadcrumb-hero {
+    position: relative;
+    padding: 120px 0 80px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 130px; /* offset for sticky header */
+}
+
+.breadcrumb-hero .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.breadcrumb-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb-content .page-title {
+    font-size: 3rem;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.breadcrumb-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breadcrumb-nav a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition-smooth);
+}
+
+.breadcrumb-nav a:hover {
+    color: var(--color-gold);
+}
+
+.breadcrumb-nav .separator {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+}
+
+.breadcrumb-nav .current {
+    color: var(--color-gold);
+    font-weight: 500;
+}
+
+/* Home Page Vehicle Carousel/Slider Section */
+.cars-carousel-wrapper {
+    position: relative;
+    margin-top: 50px;
+    padding: 0 50px;
+}
+
+.cars-carousel-outer {
+    overflow: hidden;
+    width: 100%;
+}
+
+.cars-carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.cars-carousel-track .car-card {
+    flex: 0 0 calc((100% - 60px) / 3);
+    width: calc((100% - 60px) / 3);
+    margin: 0;
+}
+
+/* Carousel Buttons */
+.cars-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: var(--shadow-premium);
+    transition: var(--transition-smooth);
+}
+
+.cars-carousel-arrow:hover {
+    background: var(--gradient-gold);
+    color: #000000;
+    border-color: transparent;
+    box-shadow: var(--shadow-gold-hover);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.cars-carousel-arrow.prev {
+    left: -10px;
+}
+
+.cars-carousel-arrow.next {
+    right: -10px;
+}
+
+.cars-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.cars-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.cars-carousel-dot.active {
+    background: var(--color-gold);
+    width: 24px;
+    border-radius: 5px;
+}
+
+/* View All Vehicles Button container */
+.view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Responsiveness for Slider */
+@media (max-width: 1024px) {
+    .cars-carousel-track .car-card {
+        flex: 0 0 calc((100% - 30px) / 2);
+        width: calc((100% - 30px) / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-hero {
+        padding: 80px 0 60px 0;
+        margin-top: 110px; /* offset for compact sticky header */
+    }
+    
+    .breadcrumb-content .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .cars-carousel-wrapper {
+        padding: 0 20px;
+    }
+    
+    .cars-carousel-track .car-card {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    
+    .cars-carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .cars-carousel-arrow.prev {
+        left: -15px;
+    }
+    
+    .cars-carousel-arrow.next {
+        right: -15px;
+    }
+}
+

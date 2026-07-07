@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional car detailing services from MyCarz USA. Interior deep cleaning, exterior wash, wax & paint protection, engine bay cleaning and more.">
+    <meta name="keywords"
+        content="car detailing, auto detailing, interior cleaning, exterior wash, wax protection, MyCarz USA, professional detailing">
+    <title>MYCARZ USA | Professional Car Detailing Services</title>
+    <link rel="icon" type="image/png" href="assets/Logo%20Black.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=3.6">
+
+    <style>
+        /* ── DETAILING PAGE SPECIFIC STYLES ── */
+
+        /* Hero with dark overlay on image */
+        .detailing-hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .detailing-hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .detailing-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.28);
+        }
+
+        .detailing-hero-bg .dark-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                105deg,
+                rgba(0,0,0,0.88) 0%,
+                rgba(0,0,0,0.62) 55%,
+                rgba(0,0,0,0.30) 100%
+            );
+            z-index: 1;
+        }
+
+        .detailing-hero-bg .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212,175,55,0.10) 0%, rgba(0,0,0,0) 70%);
+            bottom: -10%;
+            left: 30%;
+            filter: blur(60px);
+            z-index: 2;
+        }
+
+        .detailing-hero-inner {
+            position: relative;
+            z-index: 3;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            padding-top: 140px;
+            padding-bottom: 100px;
+            width: 100%;
+        }
+
+        /* ── SERVICES GRID ── */
+        .services-section {
+            padding: 120px 0;
+            background: var(--color-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 56px;
+        }
+
+        .service-card {
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: #fff;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-gold);
+            transition: width 0.45s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .service-card:hover::before {
+            width: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-border-gold);
+            box-shadow: var(--shadow-gold-hover);
+        }
+
+        .service-icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-sm);
+            background: rgba(212,175,55,0.06);
+            border: 1.5px solid var(--color-border-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold-hover);
+            flex-shrink: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon-wrap {
+            background: var(--gradient-gold);
+            color: #000;
+            border-color: transparent;
+            transform: scale(1.08) rotate(-4deg);
+        }
+
+        .service-icon-wrap i {
+            width: 24px;
+            height: 24px;
+        }
+
+        .service-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            font-family: var(--font-body);
+        }
+
+        .service-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gradient-gold);
+            flex-shrink: 0;
+        }
+
+        /* ── WHY CHOOSE US SECTION ── */
+        .detailing-why-section {
+            padding: 120px 0;
+            background: var(--color-bg-secondary);
+        }
+
+        .detailing-why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-top: 56px;
+        }
+
+        .detailing-why-card {
+            padding: 40px 28px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            background: #fff;
+            transition: var(--transition-smooth);
+        }
+
+        .detailing-why-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-border-gold-hover);
+            box-shadow: var(--shadow-gold-hover);
+        }
+
+        .detailing-why-icon {
+            width: 68px;
+            height: 68px;
+            border-radius: var(--radius-full);
+            background: rgba(212,175,55,0.05);
+            border: 1.5px solid var(--color-border-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold-hover);
+            transition: var(--transition-smooth);
+        }
+
+        .detailing-why-card:hover .detailing-why-icon {
+            background: var(--gradient-gold);
+            color: #000;
+            border-color: transparent;
+            transform: scale(1.12);
+        }
+
+        .detailing-why-icon i { width: 28px; height: 28px; }
+
+        .detailing-why-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .detailing-why-desc {
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+
+        /* ── HOW IT WORKS (dark version) ── */
+        .detailing-how-section {
+            padding: 120px 0;
+            background: var(--color-bg);
+        }
+
+        /* ── QUOTE FORM SECTION ── */
+        .quote-section {
+            padding: 120px 0;
+            position: relative;
+            background-image: url('assets/Usa Road.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            isolation: isolate;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.82);
+            z-index: 0;
+        }
+
+        .quote-section > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── FINAL CTA SECTION ── */
+        .detailing-cta {
+            padding: 120px 0;
+            background-image: url('assets/Usa Road.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            isolation: isolate;
+            text-align: center;
+        }
+
+        .detailing-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.87);
+            z-index: 0;
+        }
+
+        .detailing-cta > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── DATE INPUT ── */
+        .form-group input[type="date"] {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            color: var(--color-text-main);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            width: 100%;
+        }
+        .form-group input[type="date"]:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 10px rgba(212,175,55,0.1);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .detailing-why-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .detailing-hero-inner { padding: 0 20px; padding-top: 110px; padding-bottom: 70px; }
+            .services-section, .detailing-why-section, .detailing-how-section,
+            .quote-section, .detailing-cta { padding: 70px 0; }
+            .services-grid { grid-template-columns: 1fr; gap: 20px; }
+            .detailing-why-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LUXURY PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <img src="assets/My carz Logo neww.png" alt="MyCarz Logo" class="preloader-logo-img">
+            </div>
+            <div class="loader-track">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY HEADER -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/My carz Logo neww.png" alt="MyCarz Logo" class="logo-white-img logo-img">
+                <img src="assets/My carz Logo neww.png" alt="MyCarz Logo" class="logo-black-img logo-img">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="ourcars.html" class="nav-link">Our Cars</a>
+                <a href="usedcars.html" class="nav-link">Used Cars</a>
+                <a href="detailing.html" class="nav-link active">Car Detailing</a>
+                <a href="index.html#packages" class="nav-link">Rental Packages</a>
+                <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                <a href="index.html#documents" class="nav-link">Requirements</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:+14435016702" class="phone-btn">
+                    <i data-lucide="phone" class="icon-small"></i>
+                    <span>(443) 501-6702</span>
+                </a>
+                <a href="applyfor.html" class="btn btn-gold sheen-effect">
+                    <span>Apply for Vehicle <i data-lucide="calendar" class="icon-right"></i></span>
+                </a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="ourcars.html" class="mobile-link">Our Cars</a>
+            <a href="usedcars.html" class="mobile-link">Used Cars</a>
+            <a href="detailing.html" class="mobile-link active">Car Detailing</a>
+            <a href="index.html#packages" class="mobile-link">Rental Packages</a>
+            <a href="index.html#how-it-works" class="mobile-link">How It Works</a>
+            <a href="index.html#documents" class="mobile-link">Requirements</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <a href="tel:+14435016702" class="mobile-phone-btn">
+                <i data-lucide="phone"></i> Call (443) 501-6702
+            </a>
+            <a href="applyfor.html" class="btn btn-gold sheen-effect">
+                <span>Apply for Vehicle <i data-lucide="calendar" class="icon-right"></i></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- ═══════════════════════════════════════════
+             HERO SECTION
+        ═══════════════════════════════════════════ -->
+        <section class="detailing-hero" id="home">
+            <div class="detailing-hero-bg">
+                <img src="assets/carss.jpg" alt="Luxury Car Detailing">
+                <div class="dark-overlay"></div>
+                <div class="ambient-glow"></div>
+            </div>
+
+            <div class="detailing-hero-inner">
+                <span class="hero-tag scroll-reveal">PREMIUM AUTO CARE</span>
+                <h1 class="hero-title scroll-reveal" style="max-width: 720px;">
+                    Professional Car<br>
+                    <span class="gold-gradient-text">Detailing Services</span>
+                </h1>
+                <p class="hero-subtitle scroll-reveal" style="max-width: 640px; margin-bottom: 36px;">
+                    Keep your vehicle looking its absolute best with professional interior and exterior
+                    detailing services from MyCarz USA. Whether you need a quick refresh or a complete
+                    deep cleaning, we're here to help.
+                </p>
+
+                <div class="hero-actions scroll-reveal">
+                    <a href="#quote-section" class="btn btn-gold sheen-effect scroll-smooth">
+                        <span>Request A Quote <i data-lucide="arrow-right" class="icon-right"></i></span>
+                    </a>
+                    <a href="tel:+14435016702" class="btn btn-outline">
+                        <span>Contact Us <i data-lucide="phone" class="icon-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 2 — OUR DETAILING SERVICES
+        ═══════════════════════════════════════════ -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">WHAT WE OFFER</span>
+                    <h2 class="section-title">Our Detailing Services</h2>
+                    <p class="section-subtitle">
+                        From a thorough interior deep clean to showroom-grade exterior protection,
+                        every service is performed with premium-grade products and expert care.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <!-- Card 1: Interior Deep Cleaning -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-icon-wrap">
+                            <i data-lucide="sofa"></i>
+                        </div>
+                        <h3 class="service-title">Interior Deep Cleaning</h3>
+                        <ul class="service-list">
+                            <li>Vacuuming</li>
+                            <li>Dashboard &amp; Console Cleaning</li>
+                            <li>Leather &amp; Fabric Care</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Exterior Hand Wash -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-icon-wrap">
+                            <i data-lucide="droplets"></i>
+                        </div>
+                        <h3 class="service-title">Exterior Hand Wash</h3>
+                        <ul class="service-list">
+                            <li>Full-body hand wash</li>
+                            <li>Rinse &amp; dry treatment</li>
+                            <li>Paint surface inspection</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: Wax & Paint Protection -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-icon-wrap">
+                            <i data-lucide="shield"></i>
+                        </div>
+                        <h3 class="service-title">Wax &amp; Paint Protection</h3>
+                        <ul class="service-list">
+                            <li>Carnauba wax coating</li>
+                            <li>UV &amp; oxidation protection</li>
+                            <li>Gloss &amp; shine enhancement</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 4: Engine Bay Cleaning -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-icon-wrap">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <h3 class="service-title">Engine Bay Cleaning</h3>
+                        <ul class="service-list">
+                            <li>Degreasing &amp; pressure rinse</li>
+                            <li>Component drying &amp; protection</li>
+                            <li>Visual inspection included</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 5: Wheel & Tire Cleaning -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-icon-wrap">
+                            <i data-lucide="circle-dot"></i>
+                        </div>
+                        <h3 class="service-title">Wheel &amp; Tire Cleaning</h3>
+                        <ul class="service-list">
+                            <li>Brake dust &amp; grime removal</li>
+                            <li>Tire dressing &amp; shine</li>
+                            <li>Rim polish finish</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 6: Window Cleaning & Odor Removal -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-icon-wrap">
+                            <i data-lucide="wind"></i>
+                        </div>
+                        <h3 class="service-title">Window &amp; Odor Services</h3>
+                        <ul class="service-list">
+                            <li>Window Cleaning (inside &amp; out)</li>
+                            <li>Odor Removal Treatment</li>
+                            <li>Air freshener application</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 3 — WHY CHOOSE MYCARZ USA
+        ═══════════════════════════════════════════ -->
+        <section class="detailing-why-section" id="why-us">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">THE MYCARZ DIFFERENCE</span>
+                    <h2 class="section-title">Why Choose MyCarz USA</h2>
+                    <p class="section-subtitle">
+                        We deliver a premium detailing experience that goes beyond expectations —
+                        every vehicle leaves our hands spotless.
+                    </p>
+                </div>
+
+                <div class="detailing-why-grid scroll-reveal">
+
+                    <!-- Card 1 -->
+                    <div class="detailing-why-card">
+                        <div class="detailing-why-icon">
+                            <i data-lucide="wrench"></i>
+                        </div>
+                        <h3 class="detailing-why-title">Professional Equipment</h3>
+                        <p class="detailing-why-desc">
+                            We use industry-grade tools and premium-quality detailing products to deliver flawless results every time.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="detailing-why-card">
+                        <div class="detailing-why-icon">
+                            <i data-lucide="user-check"></i>
+                        </div>
+                        <h3 class="detailing-why-title">Experienced Team</h3>
+                        <p class="detailing-why-desc">
+                            Our trained specialists bring years of hands-on experience to every detailing job, big or small.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="detailing-why-card">
+                        <div class="detailing-why-icon">
+                            <i data-lucide="scan-eye"></i>
+                        </div>
+                        <h3 class="detailing-why-title">Attention To Detail</h3>
+                        <p class="detailing-why-desc">
+                            We meticulously clean every surface, crevice, and component so your vehicle looks like it just rolled out of the showroom.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="detailing-why-card">
+                        <div class="detailing-why-icon">
+                            <i data-lucide="heart-handshake"></i>
+                        </div>
+                        <h3 class="detailing-why-title">Customer Satisfaction</h3>
+                        <p class="detailing-why-desc">
+                            Your satisfaction is our priority. We won't stop until your vehicle meets the highest standard of cleanliness and care.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 4 — HOW IT WORKS
+        ═══════════════════════════════════════════ -->
+        <section class="detailing-how-section" id="how-it-works">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <span class="section-tag">SIMPLE PROCESS</span>
+                    <h2 class="section-title">How It Works</h2>
+                    <p class="section-subtitle">Getting your car detailed with MyCarz USA is simple and straightforward in four easy steps.</p>
+                </div>
+
+                <div class="timeline-container scroll-reveal">
+                    <div class="timeline-progress"></div>
+
+                    <div class="timeline-step" data-step="1">
+                        <div class="step-num-box">
+                            <span class="step-num">01</span>
+                            <div class="step-glow"></div>
+                        </div>
+                        <h3 class="step-title">Contact Our Team</h3>
+                        <p class="step-desc">Reach out by phone or fill out the quote form below.</p>
+                    </div>
+
+                    <div class="timeline-step" data-step="2">
+                        <div class="step-num-box">
+                            <span class="step-num">02</span>
+                            <div class="step-glow"></div>
+                        </div>
+                        <h3 class="step-title">Describe Your Vehicle</h3>
+                        <p class="step-desc">Tell us about your vehicle and the service you need.</p>
+                    </div>
+
+                    <div class="timeline-step" data-step="3">
+                        <div class="step-num-box">
+                            <span class="step-num">03</span>
+                            <div class="step-glow"></div>
+                        </div>
+                        <h3 class="step-title">Receive Your Quote</h3>
+                        <p class="step-desc">Receive a custom price quote tailored to your vehicle.</p>
+                    </div>
+
+                    <div class="timeline-step" data-step="4">
+                        <div class="step-num-box">
+                            <span class="step-num">04</span>
+                            <div class="step-glow"></div>
+                        </div>
+                        <h3 class="step-title">Book Appointment</h3>
+                        <p class="step-desc">Schedule your detailing appointment at a convenient time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 5 — REQUEST A QUOTE FORM
+        ═══════════════════════════════════════════ -->
+        <section class="quote-section" id="quote-section">
+            <div class="container">
+                <div class="form-wrapper glass-panel scroll-reveal">
+
+                    <!-- Form State -->
+                    <div id="quoteFormState">
+                        <div class="form-intro">
+                            <h2 class="form-headline">Request A Quote</h2>
+                            <p class="form-subheadline">Fill in your details and we'll get back to you with a personalised detailing quote.</p>
+                        </div>
+
+                        <form id="detailingQuoteForm" class="wizard-form" onsubmit="handleQuoteSubmit(event)">
+                            <div class="form-grid">
+
+                                <div class="form-group col-half">
+                                    <label for="qFullName">Full Name *</label>
+                                    <input type="text" id="qFullName" name="fullName" required placeholder="John Doe">
+                                </div>
+
+                                <div class="form-group col-half">
+                                    <label for="qPhone">Phone Number *</label>
+                                    <input type="tel" id="qPhone" name="phone" required placeholder="(555) 000-0000">
+                                </div>
+
+                                <div class="form-group col-half">
+                                    <label for="qEmail">Email Address *</label>
+                                    <input type="email" id="qEmail" name="email" required placeholder="john@example.com">
+                                </div>
+
+                                <div class="form-group col-half">
+                                    <label for="qVehicleMake">Vehicle Make *</label>
+                                    <input type="text" id="qVehicleMake" name="vehicleMake" required placeholder="e.g. Toyota, BMW, Ford">
+                                </div>
+
+                                <div class="form-group col-half">
+                                    <label for="qVehicleModel">Vehicle Model *</label>
+                                    <input type="text" id="qVehicleModel" name="vehicleModel" required placeholder="e.g. Camry, X5, F-150">
+                                </div>
+
+                                <div class="form-group col-half">
+                                    <label for="qService">Service Needed *</label>
+                                    <select id="qService" name="service" required>
+                                        <option value="" disabled selected>-- Select Service --</option>
+                                        <option value="Interior Deep Cleaning">Interior Deep Cleaning</option>
+                                        <option value="Exterior Hand Wash">Exterior Hand Wash</option>
+                                        <option value="Wax & Paint Protection">Wax &amp; Paint Protection</option>
+                                        <option value="Engine Bay Cleaning">Engine Bay Cleaning</option>
+                                        <option value="Wheel & Tire Cleaning">Wheel &amp; Tire Cleaning</option>
+                                        <option value="Window Cleaning">Window Cleaning</option>
+                                        <option value="Odor Removal">Odor Removal</option>
+                                        <option value="Full Detail Package">Full Detail Package</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-half">
+                                    <label for="qDate">Preferred Appointment Date</label>
+                                    <input type="date" id="qDate" name="appointmentDate">
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="qMessage">Message</label>
+                                    <textarea id="qMessage" name="message" placeholder="Any additional details about your vehicle or the services you need..."></textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="form-actions-row" style="justify-content: center; margin-top: 36px;">
+                                <button type="submit" class="btn btn-gold sheen-effect" style="width: 100%; max-width: 340px;">
+                                    <span>Request My Quote <i data-lucide="send" class="icon-right"></i></span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <p style="text-align:center; margin-top:28px; font-size:0.87rem; line-height:1.65; color:var(--color-text-muted); max-width:620px; margin-left:auto; margin-right:auto;">
+                            Pricing depends on the size of your vehicle and the detailing service requested. Contact our team today and we'll provide a personalised quote.
+                        </p>
+                    </div>
+
+                    <!-- Success State -->
+                    <div id="quoteSuccessState" class="form-success-wrapper hidden">
+                        <div class="success-icon-box">
+                            <div class="success-glow"></div>
+                            <i data-lucide="check"></i>
+                        </div>
+                        <h2 class="success-title gold-gradient-text">Quote Requested!</h2>
+                        <p class="success-message">
+                            Thank you for reaching out! We've received your detailing quote request and our team will contact you shortly with a personalised price.
+                        </p>
+                        <div class="success-reference">
+                            Reference ID: <strong id="quoteRefCode">MYC-DTL-XXXX-AZ</strong>
+                        </div>
+                        <button onclick="resetQuoteForm()" class="btn btn-outline">
+                            <span>Submit Another Request <i data-lucide="rotate-ccw" class="icon-right"></i></span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             FINAL CTA SECTION
+        ═══════════════════════════════════════════ -->
+        <section class="detailing-cta" id="cta">
+            <div class="container">
+                <div class="section-header scroll-reveal" style="margin-bottom: 40px; max-width: 760px;">
+                    <span class="section-tag" style="color: var(--color-gold);">PREMIUM CARE</span>
+                    <h2 class="section-title" style="color: #FFFFFF;">Give Your Vehicle The<br>Care It Deserves</h2>
+                    <p class="section-subtitle" style="color: rgba(255,255,255,0.70); max-width: 600px; margin: 0 auto;">
+                        Professional detailing keeps your vehicle cleaner, protected, and looking like new.
+                        Contact MyCarz USA today for a personalised detailing quote.
+                    </p>
+                </div>
+                <div class="scroll-reveal" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="#quote-section" class="btn btn-gold sheen-effect scroll-smooth">
+                        <span>Request A Quote <i data-lucide="arrow-right" class="icon-right"></i></span>
+                    </a>
+                    <a href="tel:+14435016702" class="btn btn-outline">
+                        <span>Contact Us <i data-lucide="phone" class="icon-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+
+            <span class="ftr-sparkle ftr-sp1">✦</span>
+            <span class="ftr-sparkle ftr-sp2">✦</span>
+            <span class="ftr-sparkle ftr-sp3">✦</span>
+            <span class="ftr-sparkle ftr-sp4">✦</span>
+            <span class="ftr-sparkle ftr-sp5">✦</span>
+
+            <div class="footer-top">
+
+                <!-- COL 1: Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/My carz Logo neww.png" alt="MyCarz Logo" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc">
+                        MYCARZ offers reliable, affordable car rentals with flexible plans and excellent customer
+                        support, ensuring a convenient and hassle-free travel experience.
+                    </p>
+                    <div class="footer-contact-row">
+                        <a href="tel:+14435016702" class="ftr-contact-link">
+                            <i data-lucide="phone-call" class="ftr-contact-icon"></i>
+                            +1 (443) 501-6702
+                        </a>
+                        <a href="mailto:bookings@mycarzrentals.com" class="ftr-contact-link">
+                            <i data-lucide="mail" class="ftr-contact-icon"></i>
+                            bookings@mycarzrentals.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COL 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ourcars.html">Our Fleet</a></li>
+                        <li><a href="usedcars.html">Used Cars</a></li>
+                        <li><a href="detailing.html">Car Detailing</a></li>
+                        <li><a href="index.html#packages">Packages</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: Services -->
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Services</h4>
+                    <ul class="footer-links footer-services">
+                        <li><a href="index.html#packages">Weekly Car Rental</a></li>
+                        <li><a href="index.html#packages">Monthly Car Rental</a></li>
+                        <li><a href="applyfor.html" class="ftr-highlight">No Credit Check Rental</a></li>
+                        <li><a href="index.html#packages">Luxury Car Rental</a></li>
+                        <li><a href="index.html#packages">SUV Rental</a></li>
+                        <li><a href="detailing.html">Car Detailing</a></li>
+                        <li><a href="index.html#packages">Roadside Assistance</a></li>
+                        <li><a href="index.html#packages">Corporate Fleet</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: Newsletter + Payments -->
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Subscribe To The Newsletters</h4>
+                    <form class="ftr-newsletter" onsubmit="return false;">
+                        <input type="email" placeholder="Email" class="ftr-email-input" aria-label="Your email">
+                        <button type="submit" class="ftr-email-btn" aria-label="Subscribe">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+
+                    <div class="ftr-payments">
+                        <p class="ftr-payments-label">We Accept Online Payments</p>
+                        <div class="ftr-payment-icons">
+                            <!-- Mastercard -->
+                            <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" class="pay-icon">
+                                <rect width="38" height="24" rx="4" fill="#252525"/>
+                                <circle cx="15" cy="12" r="7" fill="#EB001B"/>
+                                <circle cx="23" cy="12" r="7" fill="#F79E1B"/>
+                                <path d="M19 6.8a7 7 0 0 1 0 10.4A7 7 0 0 1 19 6.8z" fill="#FF5F00"/>
+                            </svg>
+                            <!-- Visa -->
+                            <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" class="pay-icon">
+                                <rect width="38" height="24" rx="4" fill="#1A1F71"/>
+                                <text x="5" y="17" font-size="11" fill="#FFFFFF" font-family="Arial" font-weight="bold" font-style="italic">VISA</text>
+                            </svg>
+                            <!-- PayPal -->
+                            <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" class="pay-icon">
+                                <rect width="38" height="24" rx="4" fill="#003087"/>
+                                <text x="4" y="17" font-size="8.5" fill="#009CDE" font-family="Arial" font-weight="bold">Pay</text>
+                                <text x="17" y="17" font-size="8.5" fill="#FFFFFF" font-family="Arial" font-weight="bold">Pal</text>
+                            </svg>
+                            <!-- Zelle -->
+                            <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" class="pay-icon">
+                                <rect width="38" height="24" rx="4" fill="#6D1ED4"/>
+                                <text x="6" y="17" font-size="10" fill="#FFFFFF" font-family="Arial" font-weight="bold">Zelle</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /footer-top -->
+
+            <!-- BOTTOM BAR -->
+            <div class="footer-bottom">
+                <p class="ftr-copy">&copy; 2026 MYCARZ Rentals. All rights reserved. Managed by Joris Jordan Holdings.</p>
+                <div class="ftr-socials">
+                    <a href="#facebook" aria-label="Facebook" class="ftr-social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#instagram" aria-label="Instagram" class="ftr-social-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank" aria-label="YouTube" class="ftr-social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0E0E0E"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- /footer-inner -->
+    </footer>
+
+    <!-- GOOGLE REVIEW DETAIL MODAL -->
+    <div class="review-modal" id="reviewDetailModal" onclick="if(event.target===this)closeReviewModal()">
+        <div class="review-modal-content">
+            <button class="review-modal-close" onclick="closeReviewModal()" aria-label="Close">&times;</button>
+            <div id="reviewModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Global Script -->
+    <script src="script.js"></script>
+
+    <!-- Page-level Scripts -->
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('.scroll-smooth').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Quote Form: Submit Handler
+        function handleQuoteSubmit(event) {
+            event.preventDefault();
+            const form       = document.getElementById('detailingQuoteForm');
+            const formState  = document.getElementById('quoteFormState');
+            const successEl  = document.getElementById('quoteSuccessState');
+            const refEl      = document.getElementById('quoteRefCode');
+
+            if (!form || !formState || !successEl) return;
+
+            // Generate reference code
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let code = 'MYC-DTL-';
+            for (let i = 0; i < 4; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
+            code += '-AZ';
+            if (refEl) refEl.textContent = code;
+
+            // Toggle states
+            formState.classList.add('hidden');
+            successEl.classList.remove('hidden');
+
+            // Re-initialize icons inside success block
+            if (window.lucide) window.lucide.createIcons();
+
+            // Scroll to top of section
+            document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Quote Form: Reset Handler
+        function resetQuoteForm() {
+            const form       = document.getElementById('detailingQuoteForm');
+            const formState  = document.getElementById('quoteFormState');
+            const successEl  = document.getElementById('quoteSuccessState');
+
+            if (!form || !formState || !successEl) return;
+
+            form.reset();
+            successEl.classList.add('hidden');
+            formState.classList.remove('hidden');
+
+            if (window.lucide) window.lucide.createIcons();
+        }
+    </script>
+
+</body>
+</html>

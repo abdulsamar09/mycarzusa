@@ -383,7 +383,7 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 130px;
+    height: 100px;
     z-index: 1000;
     transition: var(--transition-smooth);
     /* Dark gradient so text is readable over hero video */
@@ -395,7 +395,7 @@ img {
 }
 
 .header.scrolled {
-    height: 110px;
+    height: 82px;
     background: rgba(255, 255, 255, 0.96) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -404,13 +404,14 @@ img {
 }
 
 .header-container {
-    max-width: 1400px;
+    max-width: 1500px;
     height: 100%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
 }
 
 .logo {
@@ -421,7 +422,7 @@ img {
 
 /* Header logo images */
 .logo-img {
-    height: 110px;
+    height: 90px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -438,18 +439,19 @@ img {
 
 .nav-menu {
     display: flex;
-    gap: 36px;
+    gap: 22px;
 }
 
 .nav-link {
     font-family: var(--font-body);
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.88);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
     position: relative;
     padding: 8px 0;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-link:hover,
@@ -486,17 +488,19 @@ img {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 16px;
+    flex-shrink: 0;
 }
 
 .phone-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.80rem;
     color: rgba(255, 255, 255, 0.9);
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .phone-btn:hover {
@@ -518,10 +522,11 @@ img {
 
 /* Header context — slightly compact btn */
 .header .btn {
-    height: 46px;
-    padding: 0 28px;
-    font-size: 0.85rem;
-    border-radius: 14px;
+    height: 42px;
+    padding: 0 20px;
+    font-size: 0.77rem;
+    border-radius: 12px;
+    white-space: nowrap;
 }
 
 /* Full-width button utility */
@@ -1815,6 +1820,7 @@ img {
 .form-group input[type="text"],
 .form-group input[type="tel"],
 .form-group input[type="email"],
+.form-group textarea,
 .form-group select {
     background: #FFFFFF;
     border: 1px solid var(--color-border);
@@ -1827,6 +1833,7 @@ img {
 }
 
 .form-group input:focus,
+.form-group textarea:focus,
 .form-group select:focus {
     outline: none;
     border-color: var(--color-gold);
@@ -2778,7 +2785,7 @@ img {
    FOOTER — Dark rounded card matching reference layout
    ============================================================ */
 .footer {
-    padding: 0 16px 16px;
+    padding: 60px 16px 16px;
     background: transparent;
 }
 
@@ -4413,3 +4420,143 @@ body.overflow-hidden {
     }
 }
 
+/* ============================================================
+   USED CARS SUB-PAGE CUSTOM STYLES
+   ============================================================ */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-border-gold-hover);
+    box-shadow: var(--shadow-gold-hover);
+    background: var(--color-card-bg-hover);
+}
+
+.feature-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-full);
+    background: rgba(212, 175, 55, 0.05);
+    border: 1.5px solid var(--color-border-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold-hover);
+    margin-bottom: 24px;
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover .feature-icon-box {
+    background: var(--gradient-gold);
+    color: #000000;
+    border-color: transparent;
+    transform: scale(1.1);
+}
+
+.feature-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    color: var(--color-text-main);
+}
+
+.feature-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Textarea additional layout styling */
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ============================================================
+   AVAILABILITY BADGE — ourcars.html fleet grid
+   ============================================================ */
+.avail-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px 5px 9px;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    pointer-events: none;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.45), 0 1px 3px rgba(0,0,0,0.3);
+    line-height: 1;
+}
+
+.avail-badge::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ── Green: Available ── */
+.avail-badge.available {
+    background: #16a34a;
+    color: #ffffff;
+    border: 1.5px solid rgba(255,255,255,0.25);
+}
+
+.avail-badge.available::before {
+    background: #bbf7d0;
+    animation: badgePulse 2s infinite ease-in-out;
+}
+
+/* ── Red: Unavailable ── */
+.avail-badge.unavailable {
+    background: #dc2626;
+    color: #ffffff;
+    border: 1.5px solid rgba(255,255,255,0.2);
+}
+
+.avail-badge.unavailable::before {
+    background: #fecaca;
+}
+
+@keyframes badgePulse {
+    0%, 100% { opacity: 1;   transform: scale(1);    }
+    50%       { opacity: 0.6; transform: scale(1.25); }
+}

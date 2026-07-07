@@ -51,7 +51,9 @@
             <!-- Desktop Nav -->
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html#home" class="nav-link">Home</a>
-                <a href="ourcars.html" class="nav-link active">Our Cars</a>
+                <a href="ourcars.html" class="nav-link">Our Cars</a>
+                <a href="usedcars.html" class="nav-link">Used Cars</a>
+                <a href="detailing.html" class="nav-link">Car Detailing</a>
                 <a href="index.html#packages" class="nav-link">Rental Packages</a>
                 <a href="index.html#how-it-works" class="nav-link">How It Works</a>
                 <a href="index.html#documents" class="nav-link">Requirements</a>
@@ -80,7 +82,9 @@
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-links">
             <a href="index.html#home" class="mobile-link">Home</a>
-            <a href="ourcars.html" class="mobile-link active">Our Cars</a>
+            <a href="ourcars.html" class="mobile-link">Our Cars</a>
+            <a href="usedcars.html" class="mobile-link">Used Cars</a>
+            <a href="detailing.html" class="mobile-link">Car Detailing</a>
             <a href="index.html#packages" class="mobile-link">Rental Packages</a>
             <a href="index.html#how-it-works" class="mobile-link">How It Works</a>
             <a href="index.html#documents" class="mobile-link">Requirements</a>
@@ -712,6 +716,56 @@
                         </div>
                     </div>
                 </div>
+<!-- CAR 25: Blue Kia Optima 2017 -->
+                <div class="car-card glass-panel" data-car="Blue Kia Optima 2017">
+                    <div class="car-image-container">
+                        <img src="assets/CAR%20PRODUCT%20SOME%20IMAGES%20FOR%20LIST/Blue%20Kia%20Optima%202017.webp"
+                            alt="Blue Kia Optima 2017" class="car-img">
+                        <span class="car-year">2017</span>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-name">Blue Kia Optima</h3>
+                        <div class="car-meta">
+                            <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                            <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                        </div>
+                        <div class="car-footer">
+                            <div class="car-price-box">
+                                <span class="price-lbl">Pricing</span>
+                                <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best Rates</span>
+                            </div>
+                            <button onclick="selectVehicle('Blue Kia Optima 2017')"
+                                class="btn btn-gold-outline btn-small sheen-effect">
+                                <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+<!-- CAR 26: Chrysler 200 2013 -->
+                <div class="car-card glass-panel" data-car="Chrysler 200 2013">
+                    <div class="car-image-container">
+                        <img src="assets/CAR%20PRODUCT%20SOME%20IMAGES%20FOR%20LIST/Chrysler%20200%20(2013).jfif"
+                            alt="Chrysler 200 2013" class="car-img">
+                        <span class="car-year">2013</span>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-name">Chrysler 200</h3>
+                        <div class="car-meta">
+                            <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                            <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                        </div>
+                        <div class="car-footer">
+                            <div class="car-price-box">
+                                <span class="price-lbl">Pricing</span>
+                                <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best Rates</span>
+                            </div>
+                            <button onclick="selectVehicle('Chrysler 200 2013')"
+                                class="btn btn-gold-outline btn-small sheen-effect">
+                                <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
 
 </div>        </div>
@@ -1038,6 +1092,8 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="ourcars.html">Our Fleet</a></li>
+                        <li><a href="usedcars.html">Used Cars</a></li>
+                        <li><a href="detailing.html">Car Detailing</a></li>
                         <li><a href="index.html#packages">Packages</a></li>
                         <li><a href="index.html#how-it-works">How It Works</a></li>
                         <li><a href="index.html#contact">Contact Us</a></li>
@@ -1149,6 +1205,189 @@
 
     <!-- Script Execution -->
     <script src="script.js"></script>
+
+    <!-- ── AVAILABILITY BADGE + BUTTON BLOCK SCRIPT ── -->
+    <script>
+    (function () {
+
+        /* ── AVAILABLE CARS LIST ──────────────────────────────────── */
+        const AVAILABLE = [
+            { keys: ['mercedes', 'cle', '300'],  year: null   },
+            { keys: ['hyundai', 'white', '(1)'], year: '2025' },
+            { keys: ['kia', 'optima'],            year: '2017' },
+            { keys: ['chrysler', '200'],          year: '2013' },
+            { keys: ['hyundai', 'tucson'],        year: '2025' },
+            { keys: ['toyota', 'camry'],          year: '2010' },
+            { keys: ['nissan', 'rogue'],          year: null   },
+        ];
+
+        function isAvailable(carName, yearText) {
+            const name = carName.toLowerCase();
+            const yr   = yearText ? yearText.toLowerCase() : '';
+            return AVAILABLE.some(entry => {
+                const keysMatch = entry.keys.every(k => name.includes(k));
+                if (!keysMatch) return false;
+                return entry.year === null ? true : yr.includes(entry.year);
+            });
+        }
+
+        /* ── UNAVAILABLE MODAL ────────────────────────────────────── */
+        function createModal() {
+            if (document.getElementById('unavailModal')) return;
+
+            const overlay = document.createElement('div');
+            overlay.id = 'unavailModal';
+            overlay.style.cssText = `
+                display:none; position:fixed; inset:0; z-index:99999;
+                background:rgba(0,0,0,0.60); backdrop-filter:blur(6px);
+                -webkit-backdrop-filter:blur(6px);
+                align-items:center; justify-content:center;
+            `;
+            overlay.innerHTML = `
+                <div style="
+                    background:#fff; border-radius:20px; padding:40px 36px 32px;
+                    max-width:420px; width:90%; text-align:center;
+                    box-shadow:0 24px 60px rgba(0,0,0,0.35);
+                    animation:modalIn 0.35s cubic-bezier(0.16,1,0.3,1);
+                ">
+                    <div style="
+                        width:64px;height:64px;border-radius:50%;
+                        background:#fef2f2; border:2px solid #fca5a5;
+                        display:flex;align-items:center;justify-content:center;
+                        margin:0 auto 20px; font-size:28px;
+                    ">🚫</div>
+                    <h3 style="
+                        font-family:'Poppins',sans-serif; font-size:1.25rem;
+                        font-weight:700; color:#111; margin:0 0 10px;
+                    ">Vehicle Unavailable</h3>
+                    <p style="
+                        font-family:'Inter',sans-serif; font-size:0.9rem;
+                        color:#666; line-height:1.6; margin:0 0 28px;
+                    ">
+                        This vehicle is currently <strong style="color:#dc2626;">not available</strong>
+                        for rental. Please browse our available vehicles or contact
+                        our team for assistance.
+                    </p>
+                    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                        <a href="tel:+14435016702" style="
+                            display:inline-flex;align-items:center;gap:8px;
+                            padding:11px 22px; border-radius:12px;
+                            background:linear-gradient(135deg,#D4AF37,#F4D76A,#D4AF37);
+                            color:#000; font-family:'Inter',sans-serif;
+                            font-size:0.82rem; font-weight:700;
+                            text-decoration:none; letter-spacing:0.05em;
+                            text-transform:uppercase;
+                            box-shadow:0 6px 18px rgba(212,175,55,0.35);
+                        ">📞 Call Us</a>
+                        <button onclick="document.getElementById('unavailModal').style.display='none'" style="
+                            padding:11px 22px; border-radius:12px;
+                            background:#f3f4f6; color:#111; border:none; cursor:pointer;
+                            font-family:'Inter',sans-serif; font-size:0.82rem;
+                            font-weight:600; letter-spacing:0.04em; text-transform:uppercase;
+                        ">Close</button>
+                    </div>
+                </div>
+                <style>
+                    @keyframes modalIn {
+                        from { opacity:0; transform:scale(0.88) translateY(20px); }
+                        to   { opacity:1; transform:scale(1) translateY(0); }
+                    }
+                </style>
+            `;
+
+            // Close on overlay click
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) overlay.style.display = 'none';
+            });
+
+            document.body.appendChild(overlay);
+        }
+
+        function showUnavailModal() {
+            const m = document.getElementById('unavailModal');
+            if (m) { m.style.display = 'flex'; }
+        }
+
+        /* ── APPLY BADGES + BLOCK BUTTONS ────────────────────────── */
+        function applyBadges() {
+            createModal();
+
+            document.querySelectorAll('.car-card[data-car]').forEach(card => {
+                const carName  = card.getAttribute('data-car') || '';
+                const yearEl   = card.querySelector('.car-year');
+                const yearText = yearEl ? yearEl.textContent.trim() : '';
+                const imgBox   = card.querySelector('.car-image-container');
+                if (!imgBox) return;
+
+                // Remove existing badge if re-running
+                const old = imgBox.querySelector('.avail-badge');
+                if (old) old.remove();
+
+                const badge = document.createElement('span');
+                badge.classList.add('avail-badge');
+
+                const avail = isAvailable(carName, yearText);
+
+                if (avail) {
+                    badge.classList.add('available');
+                    badge.textContent = 'Available';
+
+                    // Restore button if previously blocked
+                    const btn = card.querySelector('.btn');
+                    if (btn && btn.dataset.blocked === 'true') {
+                        btn.style.cssText = '';
+                        btn.dataset.blocked = '';
+                        btn.onclick = btn.dataset.origOnclick
+                            ? new Function(btn.dataset.origOnclick)
+                            : null;
+                    }
+
+                } else {
+                    badge.classList.add('unavailable');
+                    badge.textContent = 'Unavailable';
+
+                    // Block the Apply button
+                    const btn = card.querySelector('.btn');
+                    if (btn && btn.dataset.blocked !== 'true') {
+                        // Save original onclick text
+                        const origOncl = btn.getAttribute('onclick') || '';
+                        btn.dataset.origOnclick = origOncl;
+                        btn.dataset.blocked = 'true';
+
+                        // Visual: grayed-out, not-allowed cursor
+                        btn.style.cssText = `
+                            background: #d1d5db !important;
+                            color: #9ca3af !important;
+                            border-color: #d1d5db !important;
+                            box-shadow: none !important;
+                            cursor: not-allowed !important;
+                            opacity: 0.75;
+                            pointer-events: auto;
+                        `;
+
+                        // Override click to show modal instead
+                        btn.setAttribute('onclick', '');
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            showUnavailModal();
+                        }, { capture: true });
+                    }
+                }
+
+                imgBox.appendChild(badge);
+            });
+        }
+
+        // Run after DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', applyBadges);
+        } else {
+            applyBadges();
+        }
+    })();
+    </script>
+
 </body>
 
 </html>

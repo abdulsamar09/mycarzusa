@@ -41,7 +41,7 @@
     </div>
 
     <!-- STICKY HEADER -->
-    <header class="header" id="header">
+    <header class="header scrolled" id="header">
         <div class="header-container">
             <a href="#" class="logo">
                 <img src="assets/My carz Logo neww.png" alt="MyCarz Logo" class="logo-white-img logo-img">
@@ -51,8 +51,8 @@
             <!-- Desktop Nav -->
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html#home" class="nav-link">Home</a>
-                <a href="ourcars.html" class="nav-link">Our Cars</a>
-                <a href="usedcars.html" class="nav-link">Used Cars</a>
+                <a href="ourcars.html" class="nav-link">Rental Cars</a>
+                <a href="usedcars.html" class="nav-link">Car Sales</a>
                 <a href="detailing.html" class="nav-link">Car Detailing</a>
                 <a href="index.html#packages" class="nav-link">Rental Packages</a>
                 <a href="index.html#how-it-works" class="nav-link">How It Works</a>
@@ -82,8 +82,8 @@
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-links">
             <a href="index.html#home" class="mobile-link">Home</a>
-            <a href="ourcars.html" class="mobile-link">Our Cars</a>
-            <a href="usedcars.html" class="mobile-link">Used Cars</a>
+            <a href="ourcars.html" class="mobile-link">Rental Cars</a>
+            <a href="usedcars.html" class="mobile-link">Car Sales</a>
             <a href="detailing.html" class="mobile-link">Car Detailing</a>
             <a href="index.html#packages" class="mobile-link">Rental Packages</a>
             <a href="index.html#how-it-works" class="mobile-link">How It Works</a>
@@ -299,11 +299,11 @@
                     </div>
                 </div>
 <!-- CAR 8: Honda Civic 2018 -->
-                <div class="car-card glass-panel" data-car="Honda Civic 2018">
+                <div class="car-card glass-panel" data-car="Honda Civic 2012">
                     <div class="car-image-container">
                         <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.06%20AM.jpeg"
                             alt="Honda Civic" class="car-img">
-                        <span class="car-year">2018</span>
+                        <span class="car-year">2012</span>
                     </div>
                     <div class="car-details">
                         <h3 class="car-name">Honda Civic</h3>
@@ -316,7 +316,7 @@
                                 <span class="price-lbl">Pricing</span>
                                 <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best Rates</span>
                             </div>
-                            <button onclick="selectVehicle('Honda Civic 2018')"
+                            <button onclick="selectVehicle('Honda Civic 2012')"
                                 class="btn btn-gold-outline btn-small sheen-effect">
                                 <span><i data-lucide="car" class="icon-left"></i> Apply</span>
                             </button>
@@ -327,8 +327,12 @@
                 <div class="car-card glass-panel" data-car="Nissan Rogue Sport 2018">
                     <div class="car-image-container">
                         <img src="assets/CAR%20PRODUCT%20SOME%20IMAGES%20FOR%20LIST/2018%20Nissan%20rogue%20sports.jfif"
-                            alt="Nissan Rogue Sport 2018" class="car-img">
+                            alt="Nissan Rogue Sport 2018" class="car-img" style="filter:grayscale(40%);">
                         <span class="car-year">2018</span>
+                        <span style="position:absolute;top:10px;right:10px;background:#dc2626;color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.05em;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px;box-shadow:0 2px 8px rgba(220,38,38,0.35);">
+                            <span style="width:7px;height:7px;border-radius:50%;background:#fff;display:inline-block;"></span>
+                            UNAVAILABLE
+                        </span>
                     </div>
                     <div class="car-details">
                         <h3 class="car-name">Nissan Rogue Sport</h3>
@@ -341,8 +345,8 @@
                                 <span class="price-lbl">Pricing</span>
                                 <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best Rates</span>
                             </div>
-                            <button onclick="selectVehicle('Nissan Rogue Sport 2018')"
-                                class="btn btn-gold-outline btn-small sheen-effect">
+                            <button disabled
+                                class="btn btn-gold-outline btn-small sheen-effect" style="opacity:0.4;cursor:not-allowed;">
                                 <span><i data-lucide="car" class="icon-left"></i> Apply</span>
                             </button>
                         </div>
@@ -760,6 +764,35 @@
                                 <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best Rates</span>
                             </div>
                             <button onclick="selectVehicle('Chrysler 200 2013')"
+                                class="btn btn-gold-outline btn-small sheen-effect">
+                                <span><i data-lucide="car" class="icon-left"></i> Apply</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+<!-- CAR 27: Nissan Rogue 2015 Black -->
+                <div class="car-card glass-panel" data-car="Nissan Rogue 2015 Black">
+                    <div class="car-image-container">
+                        <img src="assets/CAR%20PRODUCT%20SOME%20IMAGES%20FOR%20LIST/Nissan%20Rogue%202015%20Black.jpg"
+                            alt="Nissan Rogue 2015 Black" class="car-img">
+                        <span class="car-year">2015</span>
+                        <span style="position:absolute;top:10px;right:10px;background:#16a34a;color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.05em;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px;box-shadow:0 2px 8px rgba(22,163,74,0.35);">
+                            <span style="width:7px;height:7px;border-radius:50%;background:#fff;display:inline-block;"></span>
+                            AVAILABLE
+                        </span>
+                    </div>
+                    <div class="car-details">
+                        <h3 class="car-name">Nissan Rogue (Black)</h3>
+                        <div class="car-meta">
+                            <div class="meta-item"><i data-lucide="users"></i> <span>5 Seats</span></div>
+                            <div class="meta-item"><i data-lucide="fuel"></i> <span>Gasoline</span></div>
+                        </div>
+                        <div class="car-footer">
+                            <div class="car-price-box">
+                                <span class="price-lbl">Pricing</span>
+                                <span class="price-val" style="font-size:0.85rem; letter-spacing:0;">Call for Best Rates</span>
+                            </div>
+                            <button onclick="selectVehicle('Nissan Rogue 2015 Black')"
                                 class="btn btn-gold-outline btn-small sheen-effect">
                                 <span><i data-lucide="car" class="icon-left"></i> Apply</span>
                             </button>

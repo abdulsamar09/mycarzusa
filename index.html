@@ -50,8 +50,8 @@
             <!-- Desktop Nav -->
             <nav class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active">Home</a>
-                <a href="ourcars.html" class="nav-link">Our Cars</a>
-                <a href="usedcars.html" class="nav-link">Used Cars</a>
+                <a href="ourcars.html" class="nav-link">Rental Cars</a>
+                <a href="usedcars.html" class="nav-link">Car Sales</a>
                 <a href="detailing.html" class="nav-link">Car Detailing</a>
                 <a href="#packages" class="nav-link">Rental Packages</a>
                 <a href="#how-it-works" class="nav-link">How It Works</a>
@@ -81,8 +81,8 @@
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-links">
             <a href="#home" class="mobile-link">Home</a>
-            <a href="ourcars.html" class="mobile-link">Our Cars</a>
-            <a href="usedcars.html" class="mobile-link">Used Cars</a>
+            <a href="ourcars.html" class="mobile-link">Rental Cars</a>
+            <a href="usedcars.html" class="mobile-link">Car Sales</a>
             <a href="detailing.html" class="mobile-link">Car Detailing</a>
             <a href="#packages" class="mobile-link">Rental Packages</a>
             <a href="#how-it-works" class="mobile-link">How It Works</a>
@@ -266,26 +266,18 @@
                         </div>
 
                         <div class="package-rates">
+                            <div class="rate-item" data-weeks="1">
+                                <div class="rate-label-box">
+                                    <span class="rate-duration">Weekly Plan</span>
+                                </div>
+                                <div class="rate-price-box">
+                                    <span class="rate-w-price" style="font-size:0.9rem;">Contact Us</span>
+                                </div>
+                            </div>
                             <div class="rate-item active" data-weeks="4">
                                 <div class="rate-label-box">
                                     <span class="rate-duration">Monthly Plan</span>
                                     <span class="rate-note">Best Value</span>
-                                </div>
-                                <div class="rate-price-box">
-                                    <span class="rate-w-price" style="font-size:0.9rem;">Contact Us</span>
-                                </div>
-                            </div>
-                            <div class="rate-item" data-weeks="8">
-                                <div class="rate-label-box">
-                                    <span class="rate-duration">2 Months Plan</span>
-                                </div>
-                                <div class="rate-price-box">
-                                    <span class="rate-w-price" style="font-size:0.9rem;">Contact Us</span>
-                                </div>
-                            </div>
-                            <div class="rate-item" data-weeks="12">
-                                <div class="rate-label-box">
-                                    <span class="rate-duration">3 Months Plan</span>
                                 </div>
                                 <div class="rate-price-box">
                                     <span class="rate-w-price" style="font-size:0.9rem;">Contact Us</span>
@@ -325,26 +317,18 @@
                         </div>
 
                         <div class="package-rates">
+                            <div class="rate-item" data-weeks="1">
+                                <div class="rate-label-box">
+                                    <span class="rate-duration">Weekly Plan</span>
+                                </div>
+                                <div class="rate-price-box">
+                                    <span class="rate-w-price" style="font-size:0.9rem;">Contact Us</span>
+                                </div>
+                            </div>
                             <div class="rate-item active" data-weeks="4">
                                 <div class="rate-label-box">
                                     <span class="rate-duration">Monthly Plan</span>
                                     <span class="rate-note">Highly Recommended</span>
-                                </div>
-                                <div class="rate-price-box">
-                                    <span class="rate-w-price" style="font-size:0.9rem;">Contact Us</span>
-                                </div>
-                            </div>
-                            <div class="rate-item" data-weeks="8">
-                                <div class="rate-label-box">
-                                    <span class="rate-duration">2 Months Plan</span>
-                                </div>
-                                <div class="rate-price-box">
-                                    <span class="rate-w-price" style="font-size:0.9rem;">Contact Us</span>
-                                </div>
-                            </div>
-                            <div class="rate-item" data-weeks="12">
-                                <div class="rate-label-box">
-                                    <span class="rate-duration">3 Months Plan</span>
                                 </div>
                                 <div class="rate-price-box">
                                     <span class="rate-w-price" style="font-size:0.9rem;">Contact Us</span>
@@ -422,11 +406,11 @@
                             </div>
 
                             <!-- CAR 2: Honda Civic 2018 -->
-                            <div class="car-card glass-panel" data-car="Honda Civic 2018">
+                            <div class="car-card glass-panel" data-car="Honda Civic 2012">
                                 <div class="car-image-container">
                                     <img src="assets/NEW%20CAR%20IMAGES/WhatsApp%20Image%202026-07-03%20at%205.51.06%20AM.jpeg"
                                         alt="Honda Civic" class="car-img">
-                                    <span class="car-year">2024</span>
+                                    <span class="car-year">2012</span>
                                 </div>
                                 <div class="car-details">
                                     <h3 class="car-name">Honda Civic</h3>
@@ -441,7 +425,7 @@
                                                 for Best
                                                 Rates</span>
                                         </div>
-                                        <button onclick="selectVehicle('Honda Civic 2018')"
+                                        <button onclick="selectVehicle('Honda Civic 2012')"
                                             class="btn btn-gold-outline btn-small sheen-effect">
                                             <span><i data-lucide="car" class="icon-left"></i> Apply</span>
                                         </button>
@@ -786,8 +770,6 @@
                                         onchange="updateDynamicRates()">
                                         <option value="Weekly">Weekly Plan</option>
                                         <option value="Monthly" selected>Monthly Plan</option>
-                                        <option value="2 Months">2 Months Plan</option>
-                                        <option value="3 Months">3 Months Plan</option>
                                     </select>
                                 </div>
 

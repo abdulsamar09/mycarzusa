@@ -7,13 +7,11 @@ const PRICING_SCHEMA = {
         deposit: 100,
         rates: {
             "Weekly": { weekly: 400, total: 400, weeks: 1 },
-            "Monthly": { weekly: 350, total: 1400, weeks: 4 },
-            "2 Months": { weekly: 325, total: 2600, weeks: 8 },
-            "3 Months": { weekly: 300, total: 3600, weeks: 12 }
+            "Monthly": { weekly: 350, total: 1400, weeks: 4 }
         },
         vehicles: [
             "Hyundai Elantra (White) 2012",
-            "Honda Civic 2018",
+            "Honda Civic 2012",
             "Toyota Camry 2017",
             "Mercedes E-Class 2014",
             "Mercedes Benz C300 2024",
@@ -30,6 +28,7 @@ const PRICING_SCHEMA = {
             "Jeep 2014",
             "Nissan 2017",
             "Nissan Rogue Sport 2018",
+            "Nissan Rogue 2015 Black",
             "Black Elantra 2014"
         ]
     },
@@ -37,9 +36,7 @@ const PRICING_SCHEMA = {
         deposit: 200,
         rates: {
             "Weekly": { weekly: 450, total: 450, weeks: 1 },
-            "Monthly": { weekly: 400, total: 1600, weeks: 4 },
-            "2 Months": { weekly: 375, total: 3000, weeks: 8 },
-            "3 Months": { weekly: 350, total: 4200, weeks: 12 }
+            "Monthly": { weekly: 400, total: 1600, weeks: 4 }
         },
         vehicles: [
             "Mercedes Cle 300 2026",

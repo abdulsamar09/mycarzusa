@@ -10,12 +10,12 @@ const PRICING_SCHEMA = {
             "Monthly": { weekly: 350, total: 1400, weeks: 4 }
         },
         vehicles: [
-            "Hyundai Elantra (White) 2012",
+            "Hyundai Elantra 2025",
             "Honda Civic 2012",
             "Toyota Camry 2017",
             "Mercedes E-Class 2014",
-            "Mercedes Benz C300 2024",
-            "Toyota Prius (Gray)",
+            "Mercedes Benz C300 2020",
+            "Toyota Prius 2010",
             "Hyundai Sonata (Chantel)",
             "Red Elantra 2013 (1)",
             "Red Elantra 2013 (2)",
@@ -25,7 +25,7 @@ const PRICING_SCHEMA = {
             "Blue Elantra 2012",
             "Silver Elantra 2014",
             "Silver Elantra 2017",
-            "Jeep 2014",
+            "Jeep Compass 2014",
             "Nissan 2017",
             "Nissan Rogue Sport 2018",
             "Nissan Rogue 2015 Black",
@@ -39,10 +39,10 @@ const PRICING_SCHEMA = {
             "Monthly": { weekly: 400, total: 1600, weeks: 4 }
         },
         vehicles: [
-            "Mercedes Cle 300 2026",
+            "Mercedes Cle 300 2024",
             "Hyundai (White) 2025 (1)",
             "Hyundai (White) 2025 (2)",
-            "Hyundai (Red) 2025",
+            "Hyundai (Red) 2024",
             "Hyundai Kona 2025",
             "Hyundai Tucson 2025"
         ]

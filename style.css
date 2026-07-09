@@ -1662,7 +1662,250 @@ img {
     font-weight: 500;
 }
 
+/* VEHICLE GALLERY SECTION */
+.vehicle-gallery-section {
+    padding: 100px 0;
+    background: var(--color-bg);
+}
+
+.gallery-masonry {
+    columns: 4;
+    column-gap: 16px;
+    margin-top: 48px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item--tall .gallery-img-wrap img {
+    aspect-ratio: 3 / 4;
+}
+
+.gallery-item--wide {
+    column-span: none;
+}
+
+.gallery-item--wide .gallery-img-wrap img {
+    aspect-ratio: 16 / 9;
+}
+
+.gallery-img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.gallery-img-wrap img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-img-wrap:hover img {
+    transform: scale(1.08);
+}
+
+/* Dark hover overlay via ::after */
+.gallery-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.35s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gallery-img-wrap:hover::after {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Centered magnifier circle via ::before */
+.gallery-img-wrap::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    width: 52px;
+    height: 52px;
+    background: rgba(212, 175, 55, 0.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3Cline x1='11' y1='8' x2='11' y2='14'/%3E%3Cline x1='8' y1='11' x2='14' y2='11'/%3E%3C/svg%3E") center/24px no-repeat;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.gallery-img-wrap:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.gallery-item:nth-child(1)  { animation-delay: 0.05s; }
+.gallery-item:nth-child(2)  { animation-delay: 0.10s; }
+.gallery-item:nth-child(3)  { animation-delay: 0.15s; }
+.gallery-item:nth-child(4)  { animation-delay: 0.20s; }
+.gallery-item:nth-child(5)  { animation-delay: 0.25s; }
+.gallery-item:nth-child(6)  { animation-delay: 0.30s; }
+.gallery-item:nth-child(7)  { animation-delay: 0.35s; }
+.gallery-item:nth-child(8)  { animation-delay: 0.40s; }
+.gallery-item:nth-child(9)  { animation-delay: 0.45s; }
+.gallery-item:nth-child(10) { animation-delay: 0.50s; }
+.gallery-item:nth-child(11) { animation-delay: 0.55s; }
+.gallery-item:nth-child(12) { animation-delay: 0.60s; }
+.gallery-item:nth-child(13) { animation-delay: 0.65s; }
+.gallery-item:nth-child(14) { animation-delay: 0.70s; }
+.gallery-item:nth-child(15) { animation-delay: 0.75s; }
+.gallery-item:nth-child(16) { animation-delay: 0.80s; }
+.gallery-item:nth-child(17) { animation-delay: 0.85s; }
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .gallery-masonry {
+        columns: 2;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .gallery-masonry {
+        columns: 2;
+        column-gap: 10px;
+    }
+
+    .vehicle-gallery-section {
+        padding: 70px 0;
+    }
+}
+
+/* ─── LIGHTBOX MODAL ─────────────────────────────────── */
+.lightbox-overlay {
+    display: none !important;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.93);
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.lightbox-overlay.active {
+    display: flex !important;
+}
+
+.lightbox-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    max-width: 85vw;
+    max-height: 90vh;
+}
+
+#lightboxImg {
+    max-width: 100%;
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.85);
+    display: block;
+}
+
+.lightbox-counter {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.25s;
+    z-index: 100000;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.lightbox-close:hover {
+    background: #D4AF37;
+    border-color: #D4AF37;
+    color: #111;
+    transform: rotate(90deg) scale(1.1);
+}
+
+.lightbox-arrow {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s, border-color 0.2s;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 100000;
+    user-select: none;
+}
+
+.lightbox-arrow:hover {
+    background: #D4AF37;
+    border-color: #D4AF37;
+    color: #111;
+    transform: scale(1.12);
+}
+
+@media (max-width: 768px) {
+    .lightbox-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    .lightbox-content {
+        max-width: 95vw;
+    }
+}
+/* ──────────────────────────────────────────────────────── */
+
 /* ONLINE APPLICATION SECTION & WIZARD FORM */
+
 .application-section {
     padding: 120px 0;
     position: relative;
@@ -1671,6 +1914,10 @@ img {
     background-position: center;
     background-attachment: fixed;
     isolation: isolate;
+}
+
+#inquiry-section {
+    background-image: url('assets/Used%20Cars%20images/Car%20Sale%20apply%20bg.jfif');
 }
 
 /* White overlay for the application section */

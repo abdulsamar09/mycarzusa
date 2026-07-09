@@ -48,7 +48,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center 40%;
-            filter: brightness(0.28);
+            filter: brightness(0.5);
         }
 
         .detailing-hero-bg .dark-overlay {
@@ -56,9 +56,9 @@
             inset: 0;
             background: linear-gradient(
                 105deg,
-                rgba(0,0,0,0.88) 0%,
-                rgba(0,0,0,0.62) 55%,
-                rgba(0,0,0,0.30) 100%
+                rgba(0,0,0,0.78) 0%,
+                rgba(0,0,0,0.48) 55%,
+                rgba(0,0,0,0.18) 100%
             );
             z-index: 1;
         }
@@ -106,10 +106,48 @@
             gap: 16px;
             border: 1px solid var(--color-border);
             border-radius: var(--radius-lg);
-            background: #fff;
+            background: #151515;
             transition: var(--transition-smooth);
             position: relative;
             overflow: hidden;
+        }
+
+        .service-card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.72) 100%);
+            z-index: 2;
+            transition: background 0.4s ease;
+        }
+
+        .service-card:hover .service-card-bg {
+            transform: scale(1.12);
+        }
+
+        .service-card:hover .service-card-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.55) 100%);
+        }
+
+        .service-card > *:not(.service-card-bg):not(.service-card-overlay) {
+            position: relative;
+            z-index: 3;
+        }
+
+        .service-card > .service-card-bg {
+            z-index: 1;
+        }
+
+        .service-card > .service-card-overlay {
+            z-index: 2;
         }
 
         .service-card::before {
@@ -121,6 +159,7 @@
             height: 3px;
             background: var(--gradient-gold);
             transition: width 0.45s cubic-bezier(0.16,1,0.3,1);
+            z-index: 4;
         }
 
         .service-card:hover::before {
@@ -129,8 +168,20 @@
 
         .service-card:hover {
             transform: translateY(-8px);
-            border-color: var(--color-border-gold);
+            border-color: var(--color-border-gold-hover);
             box-shadow: var(--shadow-gold-hover);
+        }
+
+        .service-card .service-icon-wrap {
+            background: rgba(212, 175, 55, 0.12);
+        }
+
+        .service-card .service-title {
+            color: #FFFFFF;
+        }
+
+        .service-card .service-list li {
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .service-icon-wrap {
@@ -276,7 +327,7 @@
         .quote-section {
             padding: 120px 0;
             position: relative;
-            background-image: url('assets/Usa Road.jpeg');
+            background-image: url('assets/detailing%20Services%20Images/apply%20bg%20images.jfif');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -439,7 +490,7 @@
         ═══════════════════════════════════════════ -->
         <section class="detailing-hero" id="home">
             <div class="detailing-hero-bg">
-                <img src="assets/carss.jpg" alt="Luxury Car Detailing">
+                <img src="assets/detailing%20Services%20Images/car%20detailing%20heroshoot.webp" alt="Luxury Car Detailing">
                 <div class="dark-overlay"></div>
                 <div class="ambient-glow"></div>
             </div>
@@ -485,6 +536,8 @@
 
                     <!-- Card 1: Interior Deep Cleaning -->
                     <div class="service-card scroll-reveal">
+                        <div class="service-card-bg" style="background-image: url('assets/detailing%20Services%20Images/Interior%20Deep%20Cleaning.webp');"></div>
+                        <div class="service-card-overlay"></div>
                         <div class="service-icon-wrap">
                             <i data-lucide="sofa"></i>
                         </div>
@@ -498,6 +551,8 @@
 
                     <!-- Card 2: Exterior Hand Wash -->
                     <div class="service-card scroll-reveal">
+                        <div class="service-card-bg" style="background-image: url('assets/detailing%20Services%20Images/Exterior%20Hand%20Wash.jfif');"></div>
+                        <div class="service-card-overlay"></div>
                         <div class="service-icon-wrap">
                             <i data-lucide="droplets"></i>
                         </div>
@@ -511,6 +566,8 @@
 
                     <!-- Card 3: Wax & Paint Protection -->
                     <div class="service-card scroll-reveal">
+                        <div class="service-card-bg" style="background-image: url('assets/detailing%20Services%20Images/Wax%20%26%20Paint%20Protection.webp');"></div>
+                        <div class="service-card-overlay"></div>
                         <div class="service-icon-wrap">
                             <i data-lucide="shield"></i>
                         </div>
@@ -524,6 +581,8 @@
 
                     <!-- Card 4: Engine Bay Cleaning -->
                     <div class="service-card scroll-reveal">
+                        <div class="service-card-bg" style="background-image: url('assets/detailing%20Services%20Images/Engine%20Bay%20Cleaning.webp');"></div>
+                        <div class="service-card-overlay"></div>
                         <div class="service-icon-wrap">
                             <i data-lucide="cpu"></i>
                         </div>
@@ -537,6 +596,8 @@
 
                     <!-- Card 5: Wheel & Tire Cleaning -->
                     <div class="service-card scroll-reveal">
+                        <div class="service-card-bg" style="background-image: url('assets/detailing%20Services%20Images/Wheel%20%26%20Tire%20Cleaning.webp');"></div>
+                        <div class="service-card-overlay"></div>
                         <div class="service-icon-wrap">
                             <i data-lucide="circle-dot"></i>
                         </div>
@@ -550,6 +611,8 @@
 
                     <!-- Card 6: Window Cleaning & Odor Removal -->
                     <div class="service-card scroll-reveal">
+                        <div class="service-card-bg" style="background-image: url('assets/detailing%20Services%20Images/Window%20%26%20Odor%20Services.jpg');"></div>
+                        <div class="service-card-overlay"></div>
                         <div class="service-icon-wrap">
                             <i data-lucide="wind"></i>
                         </div>

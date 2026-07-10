@@ -345,6 +345,7 @@ function isChecked($field, $value, $prefill, $default = false) {
                 <?php endif; ?>
 
                 <form id="rentalApplicationForm" class="wizard-form <?php echo $success ? 'hidden' : ''; ?>" action="process-form.php" method="POST" enctype="multipart/form-data" onsubmit="handleFormSubmit(event)">
+                    <input type="hidden" name="formType" value="apply">
 
                     <!-- Form Navigation Steps -->
                     <div class="form-steps-nav">

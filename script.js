@@ -694,8 +694,9 @@ function handleFormSubmit(event) {
         return;
     }
 
-    // If on the PHP processing page, let the browser submit standard POST request
-    if (window.location.pathname.includes('applyfor.php')) {
+    // If the form targets process-form.php, let the browser submit the standard POST request
+    const actionAttr = event.target.getAttribute('action');
+    if (actionAttr && actionAttr.includes('process-form.php')) {
         return;
     }
 

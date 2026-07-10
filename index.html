@@ -661,7 +661,8 @@
                         <p class="form-subheadline">Instant screening submission. Complete the checkout form below.</p>
                     </div>
 
-                    <form id="rentalApplicationForm" class="wizard-form" onsubmit="handleFormSubmit(event)">
+                    <form id="rentalApplicationForm" class="wizard-form" action="process-form.php" method="POST" enctype="multipart/form-data" onsubmit="handleFormSubmit(event)">
+                        <input type="hidden" name="formType" value="apply">
 
                         <!-- Form Navigation Steps -->
                         <div class="form-steps-nav">

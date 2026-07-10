@@ -25,13 +25,13 @@ define('DB_PASS', 'your_database_password'); // Replace with Hostinger Database 
 define('DB_NAME', 'your_database_name');     // Replace with Hostinger Database Name
 
 // ── SMTP EMAIL SETTINGS ────────────────────────────────────
-define('SMTP_HOST', 'smtp.hostinger.com');   // Hostinger SMTP host
-define('SMTP_PORT', 465);                    // Standard SSL port. Use 587 if TLS is used
-define('SMTP_USER', 'your_smtp_user');       // SMTP email login (e.g. info@yourdomain.com)
-define('SMTP_PASS', 'your_smtp_password');   // SMTP email password
-define('SMTP_SECURE', 'ssl');                // ssl (port 465) or tls (port 587)
-define('SMTP_FROM_EMAIL', 'your_smtp_user'); // Must match SMTP user on Hostinger to avoid SMTP errors
+define('SMTP_HOST', 'smtp.hostinger.com');   // Hostinger Outgoing SMTP Server
+define('SMTP_PORT', 465);                    // Port 465 (SSL/TLS secure connection)
+define('SMTP_USER', 'booking@mycarzrentalsusa.com'); // Hostinger SMTP username
+define('SMTP_PASS', 'Adminss@123456');               // Hostinger SMTP password
+define('SMTP_SECURE', 'ssl');                // Encryption mode 'ssl' for port 465
+define('SMTP_FROM_EMAIL', 'booking@mycarzrentalsusa.com'); // Sender email
 define('SMTP_FROM_NAME', 'MyCarz USA');
 
 // ── ADMIN CONTACT EMAIL ───────────────────────────────────
-define('ADMIN_EMAIL', 'admin@mycarzusa.com');  // Email address to receive notification reports
+define('ADMIN_EMAIL', 'booking@mycarzrentalsusa.com');  // Target email where notification alerts are sent

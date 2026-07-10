@@ -759,7 +759,8 @@
                             <p class="form-subheadline">Fill in your details and we'll get back to you with a personalised detailing quote.</p>
                         </div>
 
-                        <form id="detailingQuoteForm" class="wizard-form" onsubmit="handleQuoteSubmit(event)">
+                        <form id="detailingQuoteForm" class="wizard-form" action="process-form.php" method="POST" onsubmit="handleQuoteSubmit(event)">
+                            <input type="hidden" name="formType" value="detailing">
                             <div class="form-grid">
 
                                 <div class="form-group col-half">
@@ -1002,33 +1003,30 @@
             });
         });
 
-        // Quote Form: Submit Handler
+        // Quote Form: Submit Handler (Let browser submit form to PHP backend)
         function handleQuoteSubmit(event) {
-            event.preventDefault();
-            const form       = document.getElementById('detailingQuoteForm');
-            const formState  = document.getElementById('quoteFormState');
-            const successEl  = document.getElementById('quoteSuccessState');
-            const refEl      = document.getElementById('quoteRefCode');
-
-            if (!form || !formState || !successEl) return;
-
-            // Generate reference code
-            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-            let code = 'MYC-DTL-';
-            for (let i = 0; i < 4; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
-            code += '-AZ';
-            if (refEl) refEl.textContent = code;
-
-            // Toggle states
-            formState.classList.add('hidden');
-            successEl.classList.remove('hidden');
-
-            // Re-initialize icons inside success block
-            if (window.lucide) window.lucide.createIcons();
-
-            // Scroll to top of section
-            document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' });
+            // Natural form submission is allowed
         }
+
+        // On Page Load: Check for successful query parameters
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                const ref = urlParams.get('ref') || 'MYC-DTL-XXXX-AZ';
+                const formState = document.getElementById('quoteFormState');
+                const successEl = document.getElementById('quoteSuccessState');
+                const refEl     = document.getElementById('quoteRefCode');
+                if (formState && successEl) {
+                    formState.classList.add('hidden');
+                    successEl.classList.remove('hidden');
+                    if (refEl) refEl.textContent = ref;
+                    if (window.lucide) window.lucide.createIcons();
+                    
+                    const qSection = document.getElementById('quote-section');
+                    if (qSection) qSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
 
         // Quote Form: Reset Handler
         function resetQuoteForm() {

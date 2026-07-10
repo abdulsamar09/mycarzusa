@@ -254,7 +254,8 @@
                             <p class="form-subheadline">Add your requirements below to submit your vehicle inquiry request.</p>
                         </div>
 
-                        <form id="vehicleInquiryForm" class="wizard-form" onsubmit="handleInquirySubmit(event)">
+                        <form id="vehicleInquiryForm" class="wizard-form" action="process-form.php" method="POST" onsubmit="handleInquirySubmit(event)">
+                            <input type="hidden" name="formType" value="inquiry">
                             <div class="form-grid">
                                 
                                 <div class="form-group col-half">
@@ -538,33 +539,30 @@
             });
         });
 
-        // Form Submit Handler
+        // Form Submit Handler (Let browser submit form to PHP backend)
         function handleInquirySubmit(event) {
-            event.preventDefault();
-            
-            const form = document.getElementById("vehicleInquiryForm");
-            const successState = document.getElementById("inquirySuccessState");
-            const formState = document.getElementById("inquiryFormState");
-            const refCodeSpan = document.getElementById("inquiryRefCode");
-
-            if (form && successState && formState) {
-                // Generate a unique Inquiry ID matching the website's naming structure
-                const chars = "ABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
-                let code = "MYC-REQ-";
-                for (let i = 0; i < 4; i++) {
-                    code += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
-                code += "-AZ";
-                if (refCodeSpan) refCodeSpan.innerText = code;
-
-                // Toggle visibility states
-                formState.classList.add("hidden");
-                successState.classList.remove("hidden");
-
-                // Smooth scroll to the top of the form wrapper
-                document.getElementById("inquiry-section").scrollIntoView({ behavior: "smooth" });
-            }
+            // Natural form submission is allowed
         }
+
+        // On Page Load: Check for successful query parameters
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === '1') {
+                const ref = urlParams.get('ref') || 'MYC-REQ-XXXX-AZ';
+                const formState = document.getElementById("inquiryFormState");
+                const successState = document.getElementById("inquirySuccessState");
+                const refCodeSpan = document.getElementById("inquiryRefCode");
+                if (formState && successState) {
+                    formState.classList.add("hidden");
+                    successState.classList.remove("hidden");
+                    if (refCodeSpan) refCodeSpan.innerText = ref;
+                    if (window.lucide) window.lucide.createIcons();
+                    
+                    const inqSection = document.getElementById("inquiry-section");
+                    if (inqSection) inqSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        });
 
         // Reset Form Handler
         function resetInquiryForm() {

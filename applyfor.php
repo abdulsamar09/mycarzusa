@@ -1,3 +1,28 @@
+<?php
+// Session handling and variables
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$success = isset($_GET['success']) && isset($_SESSION['success_ref']);
+$refCode = $success ? htmlspecialchars($_SESSION['success_ref']) : '';
+$errors = $_SESSION['form_errors'] ?? [];
+$prefill = $_SESSION['form_data'] ?? [];
+
+// Clear validation session data
+unset($_SESSION['form_errors']);
+unset($_SESSION['form_data']);
+unset($_SESSION['success_ref']);
+
+function isSelected($field, $value, $prefill) {
+    return ($prefill[$field] ?? '') === $value ? 'selected' : '';
+}
+function isChecked($field, $value, $prefill, $default = false) {
+    if (!isset($prefill[$field])) {
+        return $default ? 'checked' : '';
+    }
+    return $prefill[$field] === $value ? 'checked' : '';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -305,7 +330,21 @@
                     <p class="form-subheadline">Instant screening submission. Complete the checkout form below.</p>
                 </div>
 
-                <form id="rentalApplicationForm" class="wizard-form" onsubmit="handleFormSubmit(event)">
+                <!-- PHP Validation Error Alert Box -->
+                <?php if (!empty($errors)): ?>
+                    <div style="background-color: #fef2f2; border: 2px solid #fca5a5; border-radius: 12px; padding: 20px; margin-bottom: 30px; font-family: 'Inter', sans-serif;">
+                        <h4 style="color: #dc2626; margin: 0 0 10px; font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+                            <span>⚠️</span> Verification Errors Encountered
+                        </h4>
+                        <ul style="color: #7f1d1d; margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; text-align: left;">
+                            <?php foreach ($errors as $error): ?>
+                                <li><?php echo htmlspecialchars($error); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+
+                <form id="rentalApplicationForm" class="wizard-form <?php echo $success ? 'hidden' : ''; ?>" action="process-form.php" method="POST" enctype="multipart/form-data" onsubmit="handleFormSubmit(event)">
 
                     <!-- Form Navigation Steps -->
                     <div class="form-steps-nav">
@@ -329,35 +368,35 @@
                         <div class="form-grid">
                             <div class="form-group col-half">
                                 <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required="" placeholder="John">
+                                <input type="text" id="firstName" name="firstName" required="" placeholder="John" value="<?php echo htmlspecialchars($prefill['firstName'] ?? ''); ?>">
                             </div>
                             <div class="form-group col-half">
                                 <label for="lastName">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" required="" placeholder="Doe">
+                                <input type="text" id="lastName" name="lastName" required="" placeholder="Doe" value="<?php echo htmlspecialchars($prefill['lastName'] ?? ''); ?>">
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required="" placeholder="(555) 000-0000">
+                                <input type="tel" id="phone" name="phone" required="" placeholder="(555) 000-0000" value="<?php echo htmlspecialchars($prefill['phone'] ?? ''); ?>">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required="" placeholder="john@example.com">
+                                <input type="email" id="email" name="email" required="" placeholder="john@example.com" value="<?php echo htmlspecialchars($prefill['email'] ?? ''); ?>">
                             </div>
                             <div class="form-group full-width">
                                 <label for="address">Street Address *</label>
-                                <input type="text" id="address" name="address" required="" placeholder="123 Luxury Dr">
+                                <input type="text" id="address" name="address" required="" placeholder="123 Luxury Dr" value="<?php echo htmlspecialchars($prefill['address'] ?? ''); ?>">
                             </div>
                             <div class="form-group col-third">
                                 <label for="city">City *</label>
-                                <input type="text" id="city" name="city" required="" placeholder="Los Angeles">
+                                <input type="text" id="city" name="city" required="" placeholder="Los Angeles" value="<?php echo htmlspecialchars($prefill['city'] ?? ''); ?>">
                             </div>
                             <div class="form-group col-third">
                                 <label for="state">State *</label>
-                                <input type="text" id="state" name="state" required="" placeholder="CA">
+                                <input type="text" id="state" name="state" required="" placeholder="CA" value="<?php echo htmlspecialchars($prefill['state'] ?? ''); ?>">
                             </div>
                             <div class="form-group col-third">
                                 <label for="zipCode">ZIP Code *</label>
-                                <input type="text" id="zipCode" name="zipCode" required="" placeholder="90001">
+                                <input type="text" id="zipCode" name="zipCode" required="" placeholder="90001" value="<?php echo htmlspecialchars($prefill['zipCode'] ?? ''); ?>">
                             </div>
                         </div>
 
@@ -383,42 +422,42 @@
                             <div class="form-group">
                                 <label for="vehicleDropdown">Vehicle Select *</label>
                                 <select id="vehicleDropdown" name="vehicle" required="" onchange="updateDynamicRates()">
-                                    <option value="" disabled="" selected="">-- Select Vehicle --</option>
-                                    <option value="Hyundai Elantra 2025">Hyundai Elantra 2025</option>
-                                    <option value="Mercedes Cle 300 2024">Mercedes Cle 300 2024</option>
-                                    <option value="Hyundai (White) 2025 (1)">Hyundai (White) 2025 (1)</option>
-                                    <option value="Hyundai (White) 2025 (2)">Hyundai (White) 2025 (2)</option>
-                                    <option value="Hyundai (Red) 2024">Hyundai (Red) 2024</option>
-                                    <option value="Hyundai Kona 2025">Hyundai Kona 2025</option>
-                                    <option value="Hyundai Tucson 2025">Hyundai Tucson 2025</option>
-                                    <option value="Honda Civic 2018">Honda Civic 2018</option>
-                                    <option value="Toyota Camry 2017">Toyota Camry 2017</option>
-                                    <option value="Mercedes Benz C300 2020">Mercedes Benz C300 2020</option>
-                                    <option value="Mercedes E-Class 2014">Mercedes E-Class 2014</option>
-                                    <option value="Toyota Prius 2010">Toyota Prius 2010</option>
-                                    <option value="Hyundai Sonata (Chantel)">Hyundai Sonata (Chantel)</option>
-                                    <option value="Red Elantra 2013 (1)">Red Elantra 2013 (1)</option>
-                                    <option value="Red Elantra 2013 (2)">Red Elantra 2013 (2)</option>
-                                    <option value="Red Buick 2015">Red Buick 2015</option>
-                                    <option value="Blue Kia (Jasmin)">Blue Kia (Jasmin)</option>
-                                    <option value="Toyota Camry (Henry) 2010">Toyota Camry (Henry) 2010</option>
-                                    <option value="Blue Elantra 2012">Blue Elantra 2012</option>
-                                    <option value="Silver Elantra 2014">Silver Elantra 2014</option>
-                                    <option value="Silver Elantra 2017">Silver Elantra 2017</option>
-                                    <option value="Jeep Compass 2014">Jeep Compass 2014</option>
-                                    <option value="Nissan 2017">Nissan 2017</option>
-                                    <option value="Nissan Rogue Sport 2018">Nissan Rogue Sport 2018</option>
-                                    <option value="Black Elantra 2014">Black Elantra 2014</option>
-                                    <option value="Blue Kia Optima 2017">Blue Kia Optima 2017</option>
-                                    <option value="Chrysler 200 2013">Chrysler 200 2013</option>
+                                    <option value="" disabled="" <?php echo empty($prefill['vehicle']) ? 'selected' : ''; ?>>-- Select Vehicle --</option>
+                                    <option value="Hyundai Elantra 2025" <?php echo isSelected('vehicle', 'Hyundai Elantra 2025', $prefill); ?>>Hyundai Elantra 2025</option>
+                                    <option value="Mercedes Cle 300 2024" <?php echo isSelected('vehicle', 'Mercedes Cle 300 2024', $prefill); ?>>Mercedes Cle 300 2024</option>
+                                    <option value="Hyundai (White) 2025 (1)" <?php echo isSelected('vehicle', 'Hyundai (White) 2025 (1)', $prefill); ?>>Hyundai (White) 2025 (1)</option>
+                                    <option value="Hyundai (White) 2025 (2)" <?php echo isSelected('vehicle', 'Hyundai (White) 2025 (2)', $prefill); ?>>Hyundai (White) 2025 (2)</option>
+                                    <option value="Hyundai (Red) 2024" <?php echo isSelected('vehicle', 'Hyundai (Red) 2024', $prefill); ?>>Hyundai (Red) 2024</option>
+                                    <option value="Hyundai Kona 2025" <?php echo isSelected('vehicle', 'Hyundai Kona 2025', $prefill); ?>>Hyundai Kona 2025</option>
+                                    <option value="Hyundai Tucson 2025" <?php echo isSelected('vehicle', 'Hyundai Tucson 2025', $prefill); ?>>Hyundai Tucson 2025</option>
+                                    <option value="Honda Civic 2018" <?php echo isSelected('vehicle', 'Honda Civic 2018', $prefill); ?>>Honda Civic 2018</option>
+                                    <option value="Toyota Camry 2017" <?php echo isSelected('vehicle', 'Toyota Camry 2017', $prefill); ?>>Toyota Camry 2017</option>
+                                    <option value="Mercedes Benz C300 2020" <?php echo isSelected('vehicle', 'Mercedes Benz C300 2020', $prefill); ?>>Mercedes Benz C300 2020</option>
+                                    <option value="Mercedes E-Class 2014" <?php echo isSelected('vehicle', 'Mercedes E-Class 2014', $prefill); ?>>Mercedes E-Class 2014</option>
+                                    <option value="Toyota Prius 2010" <?php echo isSelected('vehicle', 'Toyota Prius 2010', $prefill); ?>>Toyota Prius 2010</option>
+                                    <option value="Hyundai Sonata (Chantel)" <?php echo isSelected('vehicle', 'Hyundai Sonata (Chantel)', $prefill); ?>>Hyundai Sonata (Chantel)</option>
+                                    <option value="Red Elantra 2013 (1)" <?php echo isSelected('vehicle', 'Red Elantra 2013 (1)', $prefill); ?>>Red Elantra 2013 (1)</option>
+                                    <option value="Red Elantra 2013 (2)" <?php echo isSelected('vehicle', 'Red Elantra 2013 (2)', $prefill); ?>>Red Elantra 2013 (2)</option>
+                                    <option value="Red Buick 2015" <?php echo isSelected('vehicle', 'Red Buick 2015', $prefill); ?>>Red Buick 2015</option>
+                                    <option value="Blue Kia (Jasmin)" <?php echo isSelected('vehicle', 'Blue Kia (Jasmin)', $prefill); ?>>Blue Kia (Jasmin)</option>
+                                    <option value="Toyota Camry (Henry) 2010" <?php echo isSelected('vehicle', 'Toyota Camry (Henry) 2010', $prefill); ?>>Toyota Camry (Henry) 2010</option>
+                                    <option value="Blue Elantra 2012" <?php echo isSelected('vehicle', 'Blue Elantra 2012', $prefill); ?>>Blue Elantra 2012</option>
+                                    <option value="Silver Elantra 2014" <?php echo isSelected('vehicle', 'Silver Elantra 2014', $prefill); ?>>Silver Elantra 2014</option>
+                                    <option value="Silver Elantra 2017" <?php echo isSelected('vehicle', 'Silver Elantra 2017', $prefill); ?>>Silver Elantra 2017</option>
+                                    <option value="Jeep Compass 2014" <?php echo isSelected('vehicle', 'Jeep Compass 2014', $prefill); ?>>Jeep Compass 2014</option>
+                                    <option value="Nissan 2017" <?php echo isSelected('vehicle', 'Nissan 2017', $prefill); ?>>Nissan 2017</option>
+                                    <option value="Nissan Rogue Sport 2018" <?php echo isSelected('vehicle', 'Nissan Rogue Sport 2018', $prefill); ?>>Nissan Rogue Sport 2018</option>
+                                    <option value="Black Elantra 2014" <?php echo isSelected('vehicle', 'Black Elantra 2014', $prefill); ?>>Black Elantra 2014</option>
+                                    <option value="Blue Kia Optima 2017" <?php echo isSelected('vehicle', 'Blue Kia Optima 2017', $prefill); ?>>Blue Kia Optima 2017</option>
+                                    <option value="Chrysler 200 2013" <?php echo isSelected('vehicle', 'Chrysler 200 2013', $prefill); ?>>Chrysler 200 2013</option>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="rentalDuration">Rental Plan Term *</label>
                                 <select id="rentalDuration" name="duration" required="" onchange="updateDynamicRates()">
-                                        <option value="Weekly">Weekly Plan</option>
-                                        <option value="Monthly" selected="">Monthly Plan</option>
+                                        <option value="Weekly" <?php echo isSelected('duration', 'Weekly', $prefill); ?>>Weekly Plan</option>
+                                        <option value="Monthly" <?php echo isSelected('duration', 'Monthly', $prefill); ?>>Monthly Plan</option>
                                 </select>
                             </div>
 
@@ -427,7 +466,7 @@
                                 <div class="radio-group-vertical">
                                     <label class="radio-label">
                                         <input type="radio" name="insuranceOption" value="Own Insurance" required=""
-                                            checked="">
+                                            <?php echo isChecked('insuranceOption', 'Own Insurance', $prefill, true); ?>>
                                         <span class="custom-radio"></span>
                                         <div>
                                             <strong>I Have My Own Insurance</strong>
@@ -436,7 +475,8 @@
                                         </div>
                                     </label>
                                     <label class="radio-label">
-                                        <input type="radio" name="insuranceOption" value="Purchase RCP">
+                                        <input type="radio" name="insuranceOption" value="Purchase RCP"
+                                            <?php echo isChecked('insuranceOption', 'Purchase RCP', $prefill); ?>>
                                         <span class="custom-radio"></span>
                                         <div>
                                             <strong>Purchase Rental Collision Protection (RCP)</strong>
@@ -445,7 +485,8 @@
                                         </div>
                                     </label>
                                     <label class="radio-label">
-                                        <input type="radio" name="insuranceOption" value="Need Policy Creation">
+                                        <input type="radio" name="insuranceOption" value="Need Policy Creation"
+                                            <?php echo isChecked('insuranceOption', 'Need Policy Creation', $prefill); ?>>
                                         <span class="custom-radio"></span>
                                         <div>
                                             <strong>Request Customized Insurance Policy Setup</strong>
@@ -692,7 +733,7 @@
                 </form>
 
                 <!-- Success Feedback State -->
-                <div id="formSuccessState" class="form-success-wrapper hidden">
+                <div id="formSuccessState" class="form-success-wrapper <?php echo $success ? '' : 'hidden'; ?>">
                     <div class="success-icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -707,7 +748,7 @@
                         call or email you shortly. Save your request reference below.</p>
                     <div class="success-reference">
                         <span>Reference Code:</span>
-                        <strong id="refCode">MYC-8291-AZ</strong>
+                        <strong id="refCode"><?php echo $refCode; ?></strong>
                     </div>
                     <button onclick="resetApplicationForm()" class="btn btn-gold sheen-effect">
                         <span>Create Another Application</span>

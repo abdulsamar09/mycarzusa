@@ -456,8 +456,8 @@ function selectVehicle(carName) {
             applySection.scrollIntoView({ behavior: "smooth" });
         }
     } else {
-        // Redirect to applyfor.html with parameters
-        window.location.href = `applyfor.html?car=${encodeURIComponent(carName)}`;
+        // Redirect to applyfor.php with parameters
+        window.location.href = `applyfor.php?car=${encodeURIComponent(carName)}`;
     }
 }
 
@@ -489,8 +489,8 @@ function selectRentalPlan(tier, durationLabel) {
             applySection.scrollIntoView({ behavior: "smooth" });
         }
     } else {
-        // Redirect to applyfor.html with parameters
-        window.location.href = `applyfor.html?car=${encodeURIComponent(defaultCar)}&duration=${encodeURIComponent(durationLabel)}`;
+        // Redirect to applyfor.php with parameters
+        window.location.href = `applyfor.php?car=${encodeURIComponent(defaultCar)}&duration=${encodeURIComponent(durationLabel)}`;
     }
 }
 
@@ -686,14 +686,20 @@ function acceptAgreementInForm() {
 
 // HANDLE APPLICATION WIZARD FORM SUBMIT
 function handleFormSubmit(event) {
-    event.preventDefault();
-    
-    // Complete validation on uploads and checkmarks
+    // Complete validation on checkmarks
     const agreeCheck = document.getElementById("agreementCheckbox").checked;
     if (!agreeCheck) {
+        event.preventDefault();
         openAgreementModal();
         return;
     }
+
+    // If on the PHP processing page, let the browser submit standard POST request
+    if (window.location.pathname.includes('applyfor.php')) {
+        return;
+    }
+
+    event.preventDefault();
 
     // Hide input forms and trigger SUCCESS visual dashboard feedback
     const applicationForm = document.getElementById("rentalApplicationForm");

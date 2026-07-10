@@ -1,0 +1,5 @@
+# Ignore all files in this directory
+*
+# Except the security configuration files
+!.htaccess
+!.gitignore

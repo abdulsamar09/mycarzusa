@@ -1,0 +1,8 @@
+# Block engine execution of PHP and CGI files for security
+<FilesMatch "(?i)\.(php|php3|php4|php5|php7|phtml|pl|py|cgi|asp|aspx|jsp|html|htm|sh)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Disable CGI execution
+Options -ExecCGI

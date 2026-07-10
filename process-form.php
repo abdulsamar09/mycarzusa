@@ -194,51 +194,7 @@ if ($formType === 'apply') {
 
     $refCode = generateRefCode('MYC-');
 
-    // Database Insertion (PDO)
-    try {
-        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
-        $pdo = new PDO($dsn, DB_USER, DB_PASS, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false,
-        ]);
-        
-        $sql = "INSERT INTO `rental_applications` (
-                    `reference_code`, `first_name`, `last_name`, `phone`, `email`,
-                    `address`, `city`, `state`, `zip_code`, `vehicle`, `duration`,
-                    `insurance_option`, `file_license_path`, `file_insurance_path`,
-                    `file_address_path`, `file_selfie_path`, `status`, `ip_address`, `user_agent`
-                ) VALUES (
-                    :reference_code, :first_name, :last_name, :phone, :email,
-                    :address, :city, :state, :zip_code, :vehicle, :duration,
-                    :insurance_option, :file_license_path, :file_insurance_path,
-                    :file_address_path, :file_selfie_path, 'Pending', :ip_address, :user_agent
-                )";
-                
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            ':reference_code'      => $refCode,
-            ':first_name'          => $formData['firstName'],
-            ':last_name'           => $formData['lastName'],
-            ':phone'               => $formData['phone'],
-            ':email'               => $formData['email'],
-            ':address'             => $formData['address'],
-            ':city'                => $formData['city'],
-            ':state'               => $formData['state'],
-            ':zip_code'            => $formData['zipCode'],
-            ':vehicle'             => $formData['vehicle'],
-            ':duration'            => $formData['duration'],
-            ':insurance_option'    => $formData['insuranceOption'],
-            ':file_license_path'   => $filePaths['fileLicense'],
-            ':file_insurance_path' => $filePaths['fileInsurance'],
-            ':file_address_path'   => $filePaths['fileAddress'],
-            ':file_selfie_path'    => $filePaths['fileSelfie'],
-            ':ip_address'          => $ipAddress,
-            ':user_agent'          => $userAgent
-        ]);
-    } catch (PDOException $e) {
-        error_log('Database Insertion Error: ' . $e->getMessage());
-    }
+    // Form processes without database storage
 
     // HTML Emails Bodies
     $adminSubject = "New Rental Application: {$refCode} - {$formData['firstName']} {$formData['lastName']}";
@@ -302,42 +258,7 @@ if ($formType === 'apply') {
 
     $refCode = generateRefCode('MYC-DTL-');
 
-    // Database Insertion
-    try {
-        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
-        $pdo = new PDO($dsn, DB_USER, DB_PASS, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false,
-        ]);
-        
-        $sql = "INSERT INTO `detailing_quotes` (
-                    `reference_code`, `full_name`, `phone`, `email`, `vehicle_make`,
-                    `vehicle_model`, `service`, `appointment_date`, `message`,
-                    `status`, `ip_address`, `user_agent`
-                ) VALUES (
-                    :reference_code, :full_name, :phone, :email, :vehicle_make,
-                    :vehicle_model, :service, :appointment_date, :message,
-                    'Pending', :ip_address, :user_agent
-                )";
-                
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            ':reference_code'    => $refCode,
-            ':full_name'         => $fullName,
-            ':phone'             => $phone,
-            ':email'             => $email,
-            ':vehicle_make'      => $make,
-            ':vehicle_model'     => $model,
-            ':service'           => $service,
-            ':appointment_date'  => empty($date) ? null : $date,
-            ':message'           => $message,
-            ':ip_address'        => $ipAddress,
-            ':user_agent'        => $userAgent
-        ]);
-    } catch (PDOException $e) {
-        error_log('Database Detailing Error: ' . $e->getMessage());
-    }
+    // Form processes without database storage
 
     // HTML Emails
     $adminSubject = "New Detailing Quote Request: {$refCode} - {$fullName}";
@@ -396,42 +317,7 @@ if ($formType === 'apply') {
 
     $refCode = generateRefCode('MYC-REQ-');
 
-    // Database Insertion
-    try {
-        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
-        $pdo = new PDO($dsn, DB_USER, DB_PASS, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false,
-        ]);
-        
-        $sql = "INSERT INTO `vehicle_inquiries` (
-                    `reference_code`, `full_name`, `phone`, `email`, `vehicle_type`,
-                    `preferred_brand`, `min_budget`, `max_budget`, `requirements`,
-                    `status`, `ip_address`, `user_agent`
-                ) VALUES (
-                    :reference_code, :full_name, :phone, :email, :vehicle_type,
-                    :preferred_brand, :min_budget, :max_budget, :requirements,
-                    'Pending', :ip_address, :user_agent
-                )";
-                
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            ':reference_code'    => $refCode,
-            ':full_name'         => $fullName,
-            ':phone'             => $phone,
-            ':email'             => $email,
-            ':vehicle_type'      => $type,
-            ':preferred_brand'   => $brand,
-            ':min_budget'        => $minB,
-            ':max_budget'        => $maxB,
-            ':requirements'      => $reqs,
-            ':ip_address'        => $ipAddress,
-            ':user_agent'        => $userAgent
-        ]);
-    } catch (PDOException $e) {
-        error_log('Database Inquiry Error: ' . $e->getMessage());
-    }
+    // Form processes without database storage
 
     // HTML Emails
     $adminSubject = "New Vehicle Inquiry Request: {$refCode} - {$fullName}";
